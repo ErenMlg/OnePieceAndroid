@@ -1,7 +1,6 @@
 package com.softcross.onepiece.core.network.dto.character
 
 import com.google.gson.annotations.SerializedName
-import com.softcross.onepiece.core.network.dto.DtoObject
 
 data class CharacterDto(
     @SerializedName("_id")
@@ -24,4 +23,4 @@ data class CharacterDto(
     val characterAbilities:String?,
     @SerializedName("characterPictureURL")
     val characterPicture:String?
-) : DtoObject
+)

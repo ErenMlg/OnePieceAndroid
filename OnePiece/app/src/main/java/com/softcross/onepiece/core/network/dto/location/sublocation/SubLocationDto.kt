@@ -1,10 +1,10 @@
-package com.softcross.onepiece.core.network.dto
+package com.softcross.onepiece.core.network.dto.location.sublocation
 
 import com.google.gson.annotations.SerializedName
 
 data class SubLocationDto(
     @SerializedName("_id")
-    val _id: String?,
+    val subLocationID: String?,
     @SerializedName("firstAppearance")
     val firstAppearance: String?,
     @SerializedName("location")
@@ -13,4 +13,4 @@ data class SubLocationDto(
     val subLocationName: String?,
     @SerializedName("subLocationPictureURL")
     val subLocationPictureURL: String?
-) : DtoObject
+)

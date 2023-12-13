@@ -1,10 +1,10 @@
-package com.softcross.onepiece.core.network.dto
+package com.softcross.onepiece.core.network.dto.crew
 
 import com.google.gson.annotations.SerializedName
 
 data class CrewDto(
     @SerializedName("_id")
-    val _id: String?,
+    val crewID: String?,
     @SerializedName("crewFlagURL")
     val crewFlagURL: String?,
     @SerializedName("crewMainShip")
@@ -13,4 +13,4 @@ data class CrewDto(
     val crewName: String?,
     @SerializedName("crewTotalBounty")
     val crewTotalBounty: Long?
-) : DtoObject
+)
