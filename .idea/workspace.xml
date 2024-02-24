@@ -10,6 +10,11 @@
           <theme>@style/Theme.OnePiece</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_characters.xml">
+        <config>
+          <theme>@style/Theme.OnePiece</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
@@ -17,78 +22,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a341f1b-ef2e-47f5-96f7-49e2f7fab6b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/OnePieceAndroid.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/OnePieceApp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/delegate/ViewBindingDelegate.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/ViewBindingExtension.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/mapper/OnePieceMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/mapper/OnePieceResponseMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/ResponseState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/di/MapperModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/di/RepositoryModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/entity/CrewEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/entity/DevilFruitEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/entity/LocationEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/entity/OccupationsEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/entity/SubLocationEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/OnePieceCharacterMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepositoryImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/di/SourceModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/crew/CrewResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/location/LocationResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/location/sublocation/SubLocationResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/occupation/OccupationResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/RestDataSource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/RestDataSourceImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/VM.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/CharactersFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/CharactersViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_bottom_bar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_characters.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/appInsightsSettings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/deploymentTargetSelector.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/graphql-settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/migrations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/androidTest/java/com/softcross/onepiece/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/data/model/Character.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/di/NetworkModule.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/Info.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterCrew.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterDevilFruit.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterDto.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterOccupation.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterOrigin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterResponse.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/crew/CrewDto.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/devilFruit/DevilFruitDto.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/devilFruit/DevilFruitResponse.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/location/LocationDto.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/location/sublocation/SubLocationDto.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/location/sublocation/SubLocationOrigin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/dto/occupation/OccupationDto.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/core/network/source/rest/OnePieceRestApiService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/java/com/softcross/onepiece/ui/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/app/src/test/java/com/softcross/onepiece/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/gradle/libs.versions.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnePiece/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/model/Character.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/entity/CharacterEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/di/NetworkModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/di/NetworkModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/character/CharacterResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/OnePieceRestApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/OnePieceRestApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +73,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\erenm\.android\avd\Pixel_2_API_33.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\erenm\.android\avd\Pixel_2_API_33.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -119,6 +94,18 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Class" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -126,6 +113,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2ZWgc3mPR5qPFUOlqC23v3UwP6F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -133,19 +123,42 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ResourceManagerPrefKey.ResourceType": "LAYOUT",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Software/Kotlin/UniUniverse",
-    "project.structure.last.edited": "SDK Location",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/erenm/Desktop/Desktop/Mentor/Project/New",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="android.template.441844879">
+      <recent name="com.softcross.onepiece.presentation.characters" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Software\Kotlin\OnePieceAndroid\gradle" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Software\Kotlin\OnePieceAndroid\app\src\main\java\com\softcross\onepiece\core\common\delegate" />
+      <recent name="D:\Software\Kotlin\OnePieceAndroid\app\src\main\java\com\softcross\onepiece\core\common\extension" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.softcross.onepiece" />
+      <recent name="com.softcross.onepiece.core.data" />
+      <recent name="com.softcross.onepiece.core.common.mapper" />
+    </key>
+    <key name="android.template.926199109">
+      <recent name="com.softcross.onepiece.presentation.home" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="OnePiece.app.main" />
@@ -225,6 +238,11 @@
       <updated>1702543325134</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="com.apollographql.ijplugin.settings.ProjectSettingsState">
     <option name="hasEnabledGraphQLPluginApolloKotlinSupport" value="true" />

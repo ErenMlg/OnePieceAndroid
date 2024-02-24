@@ -5,7 +5,7 @@ import com.softcross.onepiece.core.network.dto.character.CharacterResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
-interface OnePieceRestApiService {
+interface OnePieceRestApi {
 
     @GET("characters")
     suspend fun getAllCharacters(): Response<CharacterResponse>

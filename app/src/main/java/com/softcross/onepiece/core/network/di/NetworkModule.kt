@@ -1,6 +1,6 @@
 package com.softcross.onepiece.core.network.di
 
-import com.softcross.onepiece.core.network.source.rest.OnePieceRestApiService
+import com.softcross.onepiece.core.network.source.rest.OnePieceRestApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,12 +11,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+// In Kotlin, modules that only contain @Provides functions can be object classes.
+// This way, providers get optimized and almost in-lined in generated code.
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     //My local address
-    private const val REST_API_BASE_URL = "http://localhost:3000/"
+    private const val REST_API_BASE_URL = "http://192.168.1.105:3000/"
 
     //Provide the logging interceptor for the OkHttpClient,
     //For More level detail you can "alt + left" click "BODY"
@@ -44,6 +46,6 @@ object NetworkModule {
     //Provide api service
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): OnePieceRestApiService =
-        retrofit.create(OnePieceRestApiService::class.java)
+    fun provideApi(retrofit: Retrofit): OnePieceRestApi =
+        retrofit.create(OnePieceRestApi::class.java)
 }

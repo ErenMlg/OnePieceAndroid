@@ -29,13 +29,20 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_7
-        targetCompatibility = JavaVersion.VERSION_1_7
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
+
 }
 
 dependencies {
@@ -55,7 +62,8 @@ dependencies {
     //Android legacy support
     implementation(libs.androidx.legacy.support)
     //LiveData - Lifecycle
-    implementation(libs.androidx.lifecyle.livedata)
+    implementation(libs.androidx.lifecycle.livedata)
+    implementation(libs.androidx.lifecycle.viewModel)
     //Hilt
     implementation(libs.hilt.adroid)
     ksp(libs.hilt.compiler)

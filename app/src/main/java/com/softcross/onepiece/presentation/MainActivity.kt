@@ -1,4 +1,4 @@
-package com.softcross.onepiece.ui
+package com.softcross.onepiece.presentation
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

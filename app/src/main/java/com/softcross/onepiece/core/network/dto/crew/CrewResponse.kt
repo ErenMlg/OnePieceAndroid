@@ -1,12 +1,12 @@
-package com.softcross.onepiece.core.network.dto.character
+package com.softcross.onepiece.core.network.dto.crew
 
 import com.google.gson.annotations.SerializedName
 import com.softcross.onepiece.core.network.dto.Info
 
-data class CharacterResponse(
+data class CrewResponse(
     @SerializedName("info")
     val info: Info?,
-    @SerializedName("result")
-    val results: List<CharacterDto>
+    @SerializedName("results")
+    val results: List<CrewDto>
 )
 

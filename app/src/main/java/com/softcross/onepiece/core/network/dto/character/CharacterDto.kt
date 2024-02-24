@@ -16,7 +16,7 @@ data class CharacterDto(
     @SerializedName("characterOccupation")
     val characterOccupation: CharacterOccupation?,
     @SerializedName("characterBounty")
-    val characterBounty: Long?,
+    val characterBounty: String?,
     @SerializedName("characterDevilFruit")
     val characterDevilFruit: CharacterDevilFruit?,
     @SerializedName("characterAbilities")
