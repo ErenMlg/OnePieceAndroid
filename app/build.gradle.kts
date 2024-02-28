@@ -67,6 +67,8 @@ dependencies {
     //Hilt
     implementation(libs.hilt.adroid)
     ksp(libs.hilt.compiler)
+    //Picasso
+    implementation(libs.picasso)
     //Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

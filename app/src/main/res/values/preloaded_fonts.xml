@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/old_standard_tt</item>
+        <item>@font/old_standard_tt_bold</item>
+        <item>@font/playfair_display_bold</item>
+        <item>@font/poppins</item>
+        <item>@font/poppins_medium</item>
+        <item>@font/poppins_semibold</item>
+        <item>@font/poppins_thin</item>
+    </array>
+</resources>
