@@ -1,6 +1,7 @@
 package com.softcross.onepiece.presentation.characters
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.GridLayout
@@ -61,7 +62,16 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
             txtLoading.visibility = View.INVISIBLE
             pbLoading.visibility = View.INVISIBLE
             rvCharacters.adapter = adapter
-            rvCharacters.layoutManager = LinearLayoutManager(requireContext())
+            rvCharacters.layoutManager =             GridLayoutManager(requireContext(), 2).apply {
+                spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int): Int {
+                        return when (position) {
+                            0 -> 2
+                            else -> 1
+                        }
+                    }
+                }
+            }
         }
     }
 }

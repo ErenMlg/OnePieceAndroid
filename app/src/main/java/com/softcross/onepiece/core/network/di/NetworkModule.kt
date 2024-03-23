@@ -18,7 +18,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
     //My local address
-    private const val REST_API_BASE_URL = "http://192.168.1.105:3000/"
+    private const val REST_API_BASE_URL = "http://10.0.2.2:3000/"
 
     //Provide the logging interceptor for the OkHttpClient,
     //For More level detail you can "alt + left" click "BODY"
