@@ -10,5 +10,6 @@ data class UiCharacterItem(
     val name: String,
     val origin: String,
     val crew: String,
+    val bounty: String,
     val picture: String
 )

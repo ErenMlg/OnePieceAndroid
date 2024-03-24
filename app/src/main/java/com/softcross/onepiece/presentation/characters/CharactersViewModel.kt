@@ -42,6 +42,7 @@ class CharactersViewModel @Inject constructor(private val getAllCharactersUseCas
                                 characterEntity.characterName,
                                 characterEntity.characterOrigin,
                                 characterEntity.characterCrew,
+                                characterEntity.characterBounty,
                                 characterEntity.characterPictureURL
                             )
                         }

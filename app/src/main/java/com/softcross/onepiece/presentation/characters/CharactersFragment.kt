@@ -1,5 +1,8 @@
 package com.softcross.onepiece.presentation.characters
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +16,8 @@ import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.databinding.FragmentCharactersBinding
 import com.softcross.onepiece.presentation.characters.adapter.CharacterListAdapter
+import com.squareup.picasso.Picasso
+import com.squareup.picasso.Target
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -62,7 +67,7 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
             txtLoading.visibility = View.INVISIBLE
             pbLoading.visibility = View.INVISIBLE
             rvCharacters.adapter = adapter
-            rvCharacters.layoutManager =             GridLayoutManager(requireContext(), 2).apply {
+            rvCharacters.layoutManager = GridLayoutManager(requireContext(), 2).apply {
                 spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int): Int {
                         return when (position) {

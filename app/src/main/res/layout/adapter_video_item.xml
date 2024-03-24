@@ -4,19 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
     app:cardBackgroundColor="@color/secondaryColor"
     app:cardCornerRadius="5dp">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/ivVideoItem"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
 
-        <ImageView
-            android:id="@+id/ivVideoItem"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
-
-    </RelativeLayout>
 </androidx.cardview.widget.CardView>

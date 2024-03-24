@@ -7,6 +7,7 @@ import com.softcross.onepiece.core.common.extension.inflateAdapterItem
 import com.softcross.onepiece.databinding.AdapterCharacterItemBinding
 import com.softcross.onepiece.databinding.AdapterVideoItemBinding
 import com.softcross.onepiece.presentation.characters.OnePieceItem
+import com.squareup.picasso.Picasso
 
 @SuppressLint("NotifyDataSetChanged")
 class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -58,6 +59,7 @@ class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             }
 
             is OnePieceItem.CharacterItem -> {
+
                 (holder as CharacterViewHolder).bind(item)
             }
         }

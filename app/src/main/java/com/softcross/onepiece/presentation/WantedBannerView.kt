@@ -114,22 +114,24 @@ class WantedBannerView @JvmOverloads constructor(
     }
 
     //Vals
-    private val clipSpace = 3.toDp
+    private val clipSpace = 8.toDp
 
     //Binder Function
-    fun bindCharacter(bitmap: Bitmap?, characterName: String, characterBounty: String) {
-        Log.e("setCharacter", "Started")
-        this.characterBounty = characterBounty
-        this.characterName = characterName
+    fun setBitmap(bitmap: Bitmap?) {
         this.bitmap = bitmap
         initImageMatrix()
         initFramePath()
         initTextPaints()
-        Log.e("setCharacter", "Finished")
+        invalidate()
+    }
+
+    fun setTexts(characterName: String, characterBounty: String){
+        this.characterBounty = characterBounty
+        this.characterName = characterName
+        invalidate()
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
-        Log.e("onSizeChanged", "Started")
         super.onSizeChanged(w, h, oldw, oldh)
         viewRectF.set(0f, 0f, w.toFloat(), h.toFloat())
         gradient = RadialGradient(
@@ -144,11 +146,9 @@ class WantedBannerView @JvmOverloads constructor(
         initImageMatrix()
         initTextPaints()
         initFramePath()
-        Log.e("onSizeChanged", "Finished")
     }
 
     override fun onDraw(canvas: Canvas) {
-        Log.e("OnDraw", "Started")
         canvas.drawPaint(gradientPaint)
         canvas.clipPath(framePath)
         bitmap?.let { canvas.drawBitmap(it, bitmapMatrix, imagePaint) }
@@ -168,13 +168,11 @@ class WantedBannerView @JvmOverloads constructor(
                     min(
                         viewRectF.height() / bitmapRectF.height(),
                         viewRectF.width() / bitmapRectF.width() * 80 / 100
-                    )) + (viewRectF.height() * 16 / 100) + (viewRectF.height() * 8 / 100) + (viewRectF.height() * 8 / 100) - (bountyTextPaint.textSize/3f)
+                    )) + (viewRectF.height() * 16 / 100) + (viewRectF.height() * 8 / 100) + (viewRectF.height() * 8 / 100) - (bountyTextPaint.textSize / 3f)
         )
-        Log.e("OnDraw", "Finished")
     }
 
     private fun drawTexts(canvas: Canvas) {
-        Log.e("drawTexts", "Started")
         canvas.save()
         canvas.scale(1f, 2f)
         canvas.drawText(
@@ -264,7 +262,6 @@ class WantedBannerView @JvmOverloads constructor(
                     )) + (viewRectF.height() * 16 / 100) + (viewRectF.height() * 8 / 100) + (viewRectF.height() * 8 / 100),
             subtextPaint
         )
-        Log.e("drawTexts", "Finished")
     }
 
     private fun drawDiamond(
@@ -371,7 +368,6 @@ class WantedBannerView @JvmOverloads constructor(
 
 
     private fun initImageMatrix() {
-        Log.e("initImageMatrix", "Started")
         bitmap?.let {
             bitmapRectF.set(0f, 0f, it.width.toFloat(), it.height.toFloat())
 
@@ -387,11 +383,9 @@ class WantedBannerView @JvmOverloads constructor(
             bitmapMatrix.postTranslate(bitmapTranslateX, bitmapTranslateY)
             invalidate()
         }
-        Log.e("initImageMatrix", "Finished")
     }
 
     private fun initTextPaints() {
-        Log.e("initTextPaints", "Started")
         wantedTextPaint.textSize =
             (min(
                 viewRectF.width(),
@@ -408,7 +402,7 @@ class WantedBannerView @JvmOverloads constructor(
             (min(
                 viewRectF.width(),
                 viewRectF.height()
-            ) * 3f / 100) * resources.displayMetrics.scaledDensity
+            ) * 2.5f / 100) * resources.displayMetrics.scaledDensity
 
         characterTextPaint.textSize =
             (min(
@@ -422,11 +416,9 @@ class WantedBannerView @JvmOverloads constructor(
                 viewRectF.height()
             ) * 1f / 100) * resources.displayMetrics.scaledDensity
         invalidate()
-        Log.e("initTextPaints", "Finished")
     }
 
     private fun initFramePath() {
-        Log.e("initFramePath", "Started")
         framePath.reset()
 
         framePath.moveTo(viewRectF.left, viewRectF.top + clipSpace)
@@ -460,8 +452,6 @@ class WantedBannerView @JvmOverloads constructor(
         framePath.lineTo(viewRectF.left, viewRectF.top + clipSpace)
 
         invalidate()
-
-        Log.e("initFramePath", "Finished")
     }
 }
 
