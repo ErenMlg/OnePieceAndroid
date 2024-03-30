@@ -69,6 +69,8 @@ dependencies {
     ksp(libs.hilt.compiler)
     //Picasso
     implementation(libs.picasso)
+    //Lottie
+    implementation(libs.lottie)
     //Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -28,6 +28,7 @@ class CharacterViewHolder(private val binding: AdapterCharacterItemBinding) :
         with(binding) {
             Picasso.get().load(item.uiCharacterItem.picture).resize(200, 200).into(imageTarget)
             bannerView.setTexts(item.uiCharacterItem.name,item.uiCharacterItem.bounty)
+
         }
     }
 }

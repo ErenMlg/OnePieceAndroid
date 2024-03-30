@@ -8,7 +8,9 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.GridLayout
+import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +18,8 @@ import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.databinding.FragmentCharactersBinding
 import com.softcross.onepiece.presentation.characters.adapter.CharacterListAdapter
+import com.softcross.onepiece.presentation.util.gone
+import com.softcross.onepiece.presentation.util.visible
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,7 +44,7 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
     private fun observeUI() {
         viewModel.characterScreenUiState.observe(viewLifecycleOwner) { state ->
             when {
-                state.isLoading -> handleLoading()
+                state.isLoading -> contentVisible(false)
 
                 state.isError -> handleError(state.errorMessage)
 
@@ -49,23 +53,20 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
         }
     }
 
-    private fun handleLoading() {
-        with(binding) {
-            txtLoading.visibility = View.VISIBLE
-            pbLoading.visibility = View.VISIBLE
+    private fun handleError(errorMessage: String?) {
+        binding.apply {
+            txtError.text = errorMessage
+            errorLayout.visible()
+            viewLoading.gone()
+            rvCharacters.gone()
         }
 
     }
 
-    private fun handleError(errorMessage: String?) {
-        Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_LONG).show()
-    }
-
     private fun handleSuccessResponse(uiItems: List<OnePieceItem>) {
+        contentVisible(true)
         adapter.updateItems(uiItems)
         with(binding) {
-            txtLoading.visibility = View.INVISIBLE
-            pbLoading.visibility = View.INVISIBLE
             rvCharacters.adapter = adapter
             rvCharacters.layoutManager = GridLayoutManager(requireContext(), 2).apply {
                 spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -77,6 +78,14 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
                     }
                 }
             }
+        }
+    }
+
+    private fun contentVisible(isVisible: Boolean) {
+        binding.apply {
+            viewLoading.isVisible = !isVisible
+            rvCharacters.isVisible = isVisible
+            errorLayout.gone()
         }
     }
 }

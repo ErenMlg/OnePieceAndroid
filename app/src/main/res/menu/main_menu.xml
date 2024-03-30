@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Characters"
+        android:id="@+id/charactersFragment"
+        android:icon="@drawable/ic_character"/>
+    <item android:title="Crews"
+        android:id="@+id/crewsFragment"
+        android:icon="@drawable/ic_crew"/>
+    <item android:title="Devil Fruits"
+        android:id="@+id/devilFruitsFragment"
+        android:icon="@drawable/ic_devilfruit"/>
+    <item android:title="Occupations"
+        android:id="@+id/occupationsFragment"
+        android:icon="@drawable/ic_occupation"/>
+    <item android:title="Locations"
+        android:id="@+id/locationsFragment"
+        android:icon="@drawable/ic_location"/>
+</menu>

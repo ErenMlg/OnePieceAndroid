@@ -11,10 +11,11 @@ navigation = "2.7.7"
 retrofit = "2.9.0"
 okHttp3 = "4.11.0"
 hilt = "2.48.1"
-lifeCycle = "2.6.2"
+lifeCycle = "2.7.0"
 legacySupport = "1.0.0"
 ksp = "1.9.0-1.0.12"
 picasso = "2.8"
+lottie_version = '5.2.0'
 
 [libraries]
 #Android Core
@@ -41,6 +42,8 @@ hilt-adroid = { group = "com.google.dagger", name = "hilt-android", version.ref 
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 #Picasso
 picasso = { group = "com.squareup.picasso", name = "picasso", version.ref = "picasso" }
+#Lottie
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie_version" }
 #Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

@@ -3,6 +3,7 @@ package com.softcross.onepiece.presentation
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Matrix
@@ -15,8 +16,10 @@ import android.text.TextPaint
 import android.util.AttributeSet
 import android.util.Log
 import android.widget.FrameLayout
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.toBitmap
 import com.softcross.onepiece.R
 import kotlin.math.max
 import kotlin.math.min
@@ -42,6 +45,7 @@ class WantedBannerView @JvmOverloads constructor(
     private val viewRectF = RectF()
 
     private val bitmapRectF = RectF()
+
 
     private val framePath = Path()
 
@@ -125,7 +129,7 @@ class WantedBannerView @JvmOverloads constructor(
         invalidate()
     }
 
-    fun setTexts(characterName: String, characterBounty: String){
+    fun setTexts(characterName: String, characterBounty: String) {
         this.characterBounty = characterBounty
         this.characterName = characterName
         invalidate()
@@ -137,9 +141,9 @@ class WantedBannerView @JvmOverloads constructor(
         gradient = RadialGradient(
             viewRectF.width() / 2,
             viewRectF.height() / 2,
-            max(viewRectF.width(), viewRectF.height()),
+            min(viewRectF.width(), viewRectF.height()),
             ContextCompat.getColor(context, R.color.primaryColor),
-            ContextCompat.getColor(context, R.color.subColor),
+            ContextCompat.getColor(context, R.color.secondaryColor),
             Shader.TileMode.CLAMP
         )
         gradientPaint.shader = gradient
@@ -384,6 +388,7 @@ class WantedBannerView @JvmOverloads constructor(
             invalidate()
         }
     }
+
 
     private fun initTextPaints() {
         wantedTextPaint.textSize =

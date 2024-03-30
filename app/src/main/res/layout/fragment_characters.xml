@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,31 +10,55 @@
         android:id="@+id/rvCharacters"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="65dp"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:paddingBottom="8dp" />
+        android:layout_marginBottom="105dp"
+        android:clipToPadding="false"
+        android:paddingEnd="8dp"
+        android:paddingStart="0dp"
+        android:paddingBottom="8dp">
 
-    <ProgressBar
-        android:id="@+id/pbLoading"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/primaryColor"
-        android:indeterminateTint="@color/secondaryColor"
-        android:padding="125dp"
-        android:visibility="invisible" />
+    </androidx.recyclerview.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/txtLoading"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/viewLoading"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+
+
+    <LinearLayout
+        android:id="@+id/errorLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="200dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Loading"
-        android:textColor="@color/secondaryColor"
-        android:textSize="24sp"
-        android:visibility="invisible" />
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/viewError"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/error" />
+
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="marquee"
+            android:fontFamily="@font/poppins"
+            android:textAlignment="center"
+            android:textColor="@color/subColor"
+            android:textSize="16sp"
+            tools:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam" />
+    </LinearLayout>
 
 </FrameLayout>

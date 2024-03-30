@@ -17,8 +17,19 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/bg_bottom_bar" />
+        android:background="@drawable/bg_bottom_bar"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+        app:itemIconSize="22dp"
+        app:itemIconTint="@color/nav_color"
+        app:itemPaddingBottom="18dp"
+        app:itemPaddingTop="18dp"
+        app:itemRippleColor="@null"
+        app:itemTextAppearanceActive="@style/App.Custom.ActiveText"
+        app:itemTextAppearanceInactive="@style/App.Custom.ActiveText"
+        app:itemTextColor="@color/nav_color"
+        app:labelVisibilityMode="selected"
+        app:menu="@menu/main_menu" />
 
 </FrameLayout>
