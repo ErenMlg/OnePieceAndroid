@@ -23,8 +23,9 @@
             android:name="uuid"
             app:argType="string" />
         <action
-            android:id="@+id/action_characterDetailFragment_to_charactersFragment"
+            android:id="@+id/detail_to_all_characters"
             app:destination="@id/charactersFragment"
-            app:popUpTo="@id/charactersFragment" />
+            app:popUpTo="@id/charactersFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

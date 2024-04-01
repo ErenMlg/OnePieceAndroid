@@ -76,6 +76,7 @@ class CharacterDetailView @JvmOverloads constructor(
             Shader.TileMode.CLAMP
         )
         gradientPaint.shader = gradient
+        initImageMatrix()
         initFramePath()
     }
 
@@ -96,7 +97,7 @@ class CharacterDetailView @JvmOverloads constructor(
             val scaleFactor = max(widthScale, heightScale)
 
             val bitmapTranslateX = (viewRectF.width() - scaleFactor * bitmapRectF.width()) / 2f
-            val bitmapTranslateY = (viewRectF.height() - scaleFactor * bitmapRectF.height()) / 2f
+            val bitmapTranslateY = (viewRectF.height() - scaleFactor * bitmapRectF.height()) * 30/100
 
             bitmapMatrix.setScale(scaleFactor, scaleFactor)
             bitmapMatrix.postTranslate(bitmapTranslateX, bitmapTranslateY)

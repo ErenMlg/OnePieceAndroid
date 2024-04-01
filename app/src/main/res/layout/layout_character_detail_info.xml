@@ -24,6 +24,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="Title"
         android:textColor="@color/black"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/txtInfoValue"
         app:layout_constraintStart_toEndOf="@+id/iwInfo"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +34,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins_medium"
+        android:fontFamily="@font/poppins_semibold"
         android:maxLength="125"
         android:maxLines="2"
         android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"

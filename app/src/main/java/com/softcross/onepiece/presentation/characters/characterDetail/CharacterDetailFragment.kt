@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.core.graphics.drawable.toBitmapOrNull
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavArgs
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
@@ -34,16 +36,20 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
     private val imageTarget = object : Target {
         override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
             binding.viewCharacterDetailPicture.setBitmap(bitmap)
+            Log.e("Hata", "Yüklendi")
         }
 
         override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
             binding.viewCharacterDetailPicture.setBitmap(errorDrawable?.toBitmapOrNull())
-            println(e)
+            if (e != null) {
+                e.message?.let { Log.e("Hata", it) }
+            }
         }
 
 
         override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
             binding.viewCharacterDetailPicture.setBitmap(placeHolderDrawable?.toBitmapOrNull())
+            Log.e("Hata", "Yükleniyor")
         }
     }
 
@@ -69,7 +75,6 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
                 }
 
                 is CharacterDetailUiState.Success -> {
-                    Picasso.get().load(characterDetailUiState.data.picture).into(imageTarget)
                     handleSuccess(characterDetailUiState.data)
                 }
             }
@@ -78,6 +83,7 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
 
     private fun handleSuccess(detailUiItem: CharacterDetailUiItem) {
         binding.apply {
+            Picasso.get().load(detailUiItem.picture).into(imageTarget)
             onePieceUiToolbarComponent.setOnTitle(detailUiItem.name)
             viewInfoStatus.setInfo(detailUiItem.status)
             viewInfoCrew.setInfo(detailUiItem.crew)
@@ -86,9 +92,9 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
             viewInfoOccupation.setInfo(detailUiItem.occupation)
             viewInfoAbilities.setInfo(detailUiItem.abilities)
             viewInfoDiamond.setInfo(detailUiItem.bounty)
+            onePieceUiToolbarComponent.setOnClickListener { findNavController().navigate(R.id.detail_to_all_characters) }
         }
         contentVisible(true)
-
     }
 
     private fun handleError(errorMessage: String?) {

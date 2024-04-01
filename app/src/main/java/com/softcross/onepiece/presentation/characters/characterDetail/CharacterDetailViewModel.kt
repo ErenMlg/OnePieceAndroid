@@ -42,7 +42,7 @@ class CharacterDetailViewModel @Inject constructor(
                                     singleCharacterResponseState.data.characterPictureURL,
                                     singleCharacterResponseState.data.characterStatus,
                                     singleCharacterResponseState.data.characterCrew,
-                                    singleCharacterResponseState.data.characterDevilFruit,
+                                    if (singleCharacterResponseState.data.characterDevilFruit == "") "None" else singleCharacterResponseState.data.characterDevilFruit,
                                     singleCharacterResponseState.data.characterOrigin,
                                     singleCharacterResponseState.data.characterOccupation,
                                     singleCharacterResponseState.data.characterAbilities,
