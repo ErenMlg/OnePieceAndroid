@@ -4,17 +4,27 @@ import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.softcross.onepiece.core.common.extension.inflateAdapterItem
-import com.softcross.onepiece.databinding.AdapterCharacterItemBinding
-import com.softcross.onepiece.databinding.AdapterVideoItemBinding
-import com.softcross.onepiece.presentation.characters.OnePieceItem
-import com.squareup.picasso.Picasso
+import com.softcross.onepiece.databinding.ItemCharacterAdapterBinding
+import com.softcross.onepiece.databinding.ItemVideoAdapterBinding
+import com.softcross.onepiece.presentation.characters.CharacterListItem
 
 @SuppressLint("NotifyDataSetChanged")
 class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val items = mutableListOf<OnePieceItem>()
+    private var onVideoItemClickListener: (() -> Unit)? = null
 
-    fun updateItems(items: List<OnePieceItem>) {
+    private var onCharacterItemClickListener: ((Int) -> Unit)? = null
+    fun setOnVideoItemClickListener(onVideoItemClickListener: (() -> Unit)?) {
+        this.onVideoItemClickListener = onVideoItemClickListener
+    }
+
+    fun setOnCharacterItemClickListener(onCharacterItemClickListener: ((Int) -> Unit)?) {
+        this.onCharacterItemClickListener = onCharacterItemClickListener
+    }
+
+    private val items = mutableListOf<CharacterListItem>()
+
+    fun updateItems(items: List<CharacterListItem>) {
         with(this.items) {
             clear()
             addAll(items)
@@ -22,12 +32,12 @@ class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    private fun getItemAtPosition(position: Int) = items.getOrNull(position)
+    fun getItemAtPosition(position: Int) = items.getOrNull(position)
 
     override fun getItemViewType(position: Int): Int {
         return when (getItemAtPosition(position)) {
-            is OnePieceItem.VideoItem -> VIDEO_ITEM_VIEW_TYPE
-            is OnePieceItem.CharacterItem -> LIST_ITEM_VIEW_TYPE
+            is CharacterListItem.VideoItem -> VIDEO_ITEM_VIEW_TYPE
+            is CharacterListItem.CharacterItem -> LIST_ITEM_VIEW_TYPE
             else -> INVALID_VIEW_TYPE
         }
     }
@@ -36,13 +46,14 @@ class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return when (viewType) {
             VIDEO_ITEM_VIEW_TYPE -> {
                 VideoViewHolder(
-                    parent.inflateAdapterItem(AdapterVideoItemBinding::inflate)
+                    parent.inflateAdapterItem(ItemVideoAdapterBinding::inflate)
                 )
             }
 
             LIST_ITEM_VIEW_TYPE -> {
                 CharacterViewHolder(
-                    parent.inflateAdapterItem(AdapterCharacterItemBinding::inflate)
+                    parent.inflateAdapterItem(ItemCharacterAdapterBinding::inflate),
+                    onCharacterItemClickListener
                 )
             }
 
@@ -54,11 +65,11 @@ class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (val item = items[position]) {
-            is OnePieceItem.VideoItem -> {
+            is CharacterListItem.VideoItem -> {
                 (holder as VideoViewHolder).bind()
             }
 
-            is OnePieceItem.CharacterItem -> {
+            is CharacterListItem.CharacterItem -> {
 
                 (holder as CharacterViewHolder).bind(item)
             }

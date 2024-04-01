@@ -35,19 +35,17 @@ class CharactersViewModel @Inject constructor(private val getAllCharactersUseCas
                     }
 
                     is ResponseState.Success -> {
-                        val uiItems = mutableListOf<OnePieceItem>(OnePieceItem.VideoItem)
+                        val uiItems = mutableListOf<CharacterListItem>(CharacterListItem.VideoItem)
                         val uiCharacters = responseState.data.map { characterEntity ->
-                            UiCharacterItem(
+                            CharacterListUiItem(
                                 characterEntity.id,
                                 characterEntity.characterName,
-                                characterEntity.characterOrigin,
-                                characterEntity.characterCrew,
                                 characterEntity.characterBounty,
                                 characterEntity.characterPictureURL
                             )
                         }
                         uiCharacters.forEach { uiCharacter ->
-                            uiItems.add(OnePieceItem.CharacterItem(uiCharacter))
+                            uiItems.add(CharacterListItem.CharacterItem(uiCharacter))
                         }
                         _characterScreenUiState.postValue(CharacterListScreenUiState(uiItems))
                     }
@@ -59,7 +57,7 @@ class CharactersViewModel @Inject constructor(private val getAllCharactersUseCas
 }
 
 data class CharacterListScreenUiState(
-    val uiItems: List<OnePieceItem> = emptyList(),
+    val uiItems: List<CharacterListItem> = emptyList(),
     val isLoading: Boolean = false,
     val isError: Boolean = false,
     val errorMessage: String? = ""

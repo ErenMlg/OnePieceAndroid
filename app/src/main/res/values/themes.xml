@@ -2,6 +2,7 @@
     <style name="Base.Theme.OnePiece" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="android:statusBarColor">@color/secondaryColor</item>
     </style>
     <style name="Theme.OnePiece" parent="Base.Theme.OnePiece" />
 

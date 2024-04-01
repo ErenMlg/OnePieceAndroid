@@ -1,11 +1,10 @@
 package com.softcross.onepiece.presentation.characters.adapter
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.softcross.onepiece.databinding.AdapterVideoItemBinding
-import com.softcross.onepiece.presentation.characters.OnePieceItem
+import com.softcross.onepiece.databinding.ItemVideoAdapterBinding
 import com.squareup.picasso.Picasso
 
-class VideoViewHolder(private val binding: AdapterVideoItemBinding) : ViewHolder(binding.root) {
+class VideoViewHolder(private val binding: ItemVideoAdapterBinding) : ViewHolder(binding.root) {
 
     fun bind() {
 

@@ -1,27 +1,18 @@
 package com.softcross.onepiece.presentation.characters
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.GridLayout
-import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.databinding.FragmentCharactersBinding
 import com.softcross.onepiece.presentation.characters.adapter.CharacterListAdapter
 import com.softcross.onepiece.presentation.util.gone
 import com.softcross.onepiece.presentation.util.visible
-import com.squareup.picasso.Picasso
-import com.squareup.picasso.Target
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,7 +20,13 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
 
     private val binding by viewBinding(FragmentCharactersBinding::bind)
     private val viewModel: CharactersViewModel by viewModels()
-    private val adapter = CharacterListAdapter()
+    private val adapter = CharacterListAdapter().apply {
+        setOnCharacterItemClickListener {
+            val id =
+                (getItemAtPosition(it) as CharacterListItem.CharacterItem).characterListUiItem.id
+            findNavController().navigate(CharactersFragmentDirections.characterToDetail(id))
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,31 +39,29 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
     }
 
     private fun observeUI() {
-        viewModel.characterScreenUiState.observe(viewLifecycleOwner) { state ->
+        viewModel.characterScreenUiState.observe(viewLifecycleOwner) { characterListUiState ->
             when {
-                state.isLoading -> contentVisible(false)
+                characterListUiState.isLoading -> contentVisible(false)
 
-                state.isError -> handleError(state.errorMessage)
+                characterListUiState.isError -> handleError(characterListUiState.errorMessage)
 
-                else -> handleSuccessResponse(state.uiItems)
+                else -> handleSuccessResponse(characterListUiState.uiItems)
             }
         }
     }
 
     private fun handleError(errorMessage: String?) {
         binding.apply {
-            txtError.text = errorMessage
+            errorLayout.setErrorMessage(errorMessage ?: "Error")
             errorLayout.visible()
             viewLoading.gone()
             rvCharacters.gone()
         }
-
     }
 
-    private fun handleSuccessResponse(uiItems: List<OnePieceItem>) {
-        contentVisible(true)
+    private fun handleSuccessResponse(uiItems: List<CharacterListItem>) {
         adapter.updateItems(uiItems)
-        with(binding) {
+        binding.apply {
             rvCharacters.adapter = adapter
             rvCharacters.layoutManager = GridLayoutManager(requireContext(), 2).apply {
                 spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -79,6 +74,7 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
                 }
             }
         }
+        contentVisible(true)
     }
 
     private fun contentVisible(isVisible: Boolean) {

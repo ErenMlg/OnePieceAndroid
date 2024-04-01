@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iwInfo"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:padding="5dp"
+        android:tint="@color/primaryColor"
+        app:layout_constraintBottom_toBottomOf="@+id/txtInfoValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtInfoTitle"
+        tools:src="@drawable/ic_diamond" />
+
+    <TextView
+        android:id="@+id/txtInfoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Title"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/txtInfoValue"
+        app:layout_constraintStart_toEndOf="@+id/iwInfo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtInfoValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:maxLength="125"
+        android:maxLines="2"
+        android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+        android:textColor="@color/primaryColor"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iwInfo"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfoTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,8 @@
-package com.softcross.onepiece.presentation
+package com.softcross.onepiece.presentation.characters
 
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Matrix
@@ -14,14 +13,10 @@ import android.graphics.RectF
 import android.graphics.Shader
 import android.text.TextPaint
 import android.util.AttributeSet
-import android.util.Log
 import android.widget.FrameLayout
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.graphics.drawable.toBitmap
 import com.softcross.onepiece.R
-import kotlin.math.max
 import kotlin.math.min
 
 class WantedBannerView @JvmOverloads constructor(
@@ -142,7 +137,7 @@ class WantedBannerView @JvmOverloads constructor(
             viewRectF.width() / 2,
             viewRectF.height() / 2,
             min(viewRectF.width(), viewRectF.height()),
-            ContextCompat.getColor(context, R.color.primaryColor),
+            ContextCompat.getColor(context, R.color.subColor),
             ContextCompat.getColor(context, R.color.secondaryColor),
             Shader.TileMode.CLAMP
         )

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/charactersFragment">
+
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.softcross.onepiece.presentation.characters.CharactersFragment"
+        android:label="fragment_characters"
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/character_to_detail"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.softcross.onepiece.presentation.characters.characterDetail.CharacterDetailFragment"
+        android:label="fragment_character_detail"
+        tools:layout="@layout/fragment_character_detail" >
+        <argument
+            android:name="uuid"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_characterDetailFragment_to_charactersFragment"
+            app:destination="@id/charactersFragment"
+            app:popUpTo="@id/charactersFragment" />
+    </fragment>
+</navigation>

@@ -5,19 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryColor"
+    android:background="@color/subColor"
     tools:context=".presentation.MainActivity">
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.softcross.onepiece.presentation.characters.CharactersFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_gravity="bottom"
         android:background="@drawable/bg_bottom_bar"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
@@ -31,5 +25,13 @@
         app:itemTextColor="@color/nav_color"
         app:labelVisibilityMode="selected"
         app:menu="@menu/main_menu" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
 
 </FrameLayout>

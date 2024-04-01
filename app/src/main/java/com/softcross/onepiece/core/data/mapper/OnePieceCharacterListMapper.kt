@@ -1,12 +1,13 @@
 package com.softcross.onepiece.core.data.mapper
 
-import com.softcross.onepiece.core.common.mapper.OnePieceResponseMapper
+import com.softcross.onepiece.core.common.mapper.OnePieceResponseListMapper
 import com.softcross.onepiece.core.data.entity.CharacterEntity
 import com.softcross.onepiece.core.network.dto.character.CharacterResponse
 import retrofit2.Response
 import javax.inject.Inject
 
-class OnePieceCharacterMapper @Inject constructor()  : OnePieceResponseMapper<CharacterResponse, CharacterEntity> {
+class OnePieceCharacterListMapper @Inject constructor() :
+    OnePieceResponseListMapper<CharacterResponse, CharacterEntity> {
     override fun map(input: Response<CharacterResponse>?): List<CharacterEntity> {
         return input?.body()!!.results.map {
             CharacterEntity(
