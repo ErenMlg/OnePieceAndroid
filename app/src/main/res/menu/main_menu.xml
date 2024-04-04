@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_crew"/>
     <item android:title="Devil Fruits"
         android:id="@+id/devilFruitsFragment"
-        android:icon="@drawable/ic_devilfruit"/>
+        android:icon="@drawable/ic_devil_fruit"/>
     <item android:title="Occupations"
         android:id="@+id/occupationsFragment"
         android:icon="@drawable/ic_occupation"/>

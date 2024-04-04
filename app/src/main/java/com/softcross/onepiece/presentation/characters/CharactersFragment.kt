@@ -11,8 +11,8 @@ import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.databinding.FragmentCharactersBinding
 import com.softcross.onepiece.presentation.characters.adapter.CharacterListAdapter
-import com.softcross.onepiece.presentation.util.gone
-import com.softcross.onepiece.presentation.util.visible
+import com.softcross.onepiece.core.common.extension.gone
+import com.softcross.onepiece.core.common.extension.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -52,9 +52,9 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
 
     private fun handleError(errorMessage: String?) {
         binding.apply {
-            errorLayout.setErrorMessage(errorMessage ?: "Error")
-            errorLayout.visible()
-            viewLoading.gone()
+            viewErrorLayoutCharacters.setErrorMessage(errorMessage ?: "Error")
+            viewErrorLayoutCharacters.visible()
+            viewLoadingCharacters.gone()
             rvCharacters.gone()
         }
     }
@@ -79,9 +79,9 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
 
     private fun contentVisible(isVisible: Boolean) {
         binding.apply {
-            viewLoading.isVisible = !isVisible
+            viewLoadingCharacters.isVisible = !isVisible
             rvCharacters.isVisible = isVisible
-            errorLayout.gone()
+            viewErrorLayoutCharacters.gone()
         }
     }
 }

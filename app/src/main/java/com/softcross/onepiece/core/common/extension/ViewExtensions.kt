@@ -1,4 +1,4 @@
-package com.softcross.onepiece.presentation.util
+package com.softcross.onepiece.core.common.extension
 
 import android.view.View
 

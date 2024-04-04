@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.crews.crewDetail.CrewDetailFragment">
+
+    <com.softcross.onepiece.presentation.components.ErrorView
+        android:id="@+id/viewErrorCrewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/viewLoadingCrewDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+
+    <com.softcross.onepiece.presentation.components.ToolbarView
+        android:id="@+id/viewCrewDetailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.softcross.onepiece.presentation.components.DetailBoxView
+        android:id="@+id/crewFlagDetailBox"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/viewCrewDetailToolbar"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/ivCrewFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/bg_fav_icon"
+            android:padding="4dp"
+            android:src="@drawable/ic_add_favorite"
+            app:tint="@color/primaryColor" />
+
+    </com.softcross.onepiece.presentation.components.DetailBoxView>
+
+    <com.softcross.onepiece.presentation.components.DetailBoxView
+        android:id="@+id/crewDetailBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/crewFlagDetailBox"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
+                android:id="@+id/viewInfoShip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="4dp"
+                app:image="@drawable/ic_ship"
+                app:info_title="Main Ship" />
+
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
+                android:id="@+id/viewInfoBounty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="4dp"
+                app:image="@drawable/ic_diamond"
+                app:info_title="Bounty" />
+
+        </LinearLayout>
+
+
+    </com.softcross.onepiece.presentation.components.DetailBoxView>
+
+
+</RelativeLayout>

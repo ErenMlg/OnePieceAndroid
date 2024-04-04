@@ -1,4 +1,4 @@
-package com.softcross.onepiece.presentation.component
+package com.softcross.onepiece.presentation.components
 
 import android.content.Context
 import android.content.res.Resources
@@ -19,7 +19,7 @@ import com.softcross.onepiece.R
 import kotlin.math.max
 import kotlin.math.min
 
-class CharacterDetailView @JvmOverloads constructor(
+class DetailBoxView @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -70,7 +70,7 @@ class CharacterDetailView @JvmOverloads constructor(
         gradient = RadialGradient(
             viewRectF.width() / 2,
             viewRectF.height() / 2,
-            min(viewRectF.width(), viewRectF.height()),
+            max(viewRectF.width(), viewRectF.height()),
             ContextCompat.getColor(context, R.color.subColor),
             ContextCompat.getColor(context, R.color.secondaryColor),
             Shader.TileMode.CLAMP

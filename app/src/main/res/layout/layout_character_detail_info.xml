@@ -35,8 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/poppins_semibold"
-        android:maxLength="125"
-        android:maxLines="2"
         android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
         android:textColor="@color/primaryColor"
         android:textSize="10sp"

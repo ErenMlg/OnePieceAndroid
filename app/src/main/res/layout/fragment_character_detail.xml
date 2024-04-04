@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,9 +7,10 @@
     tools:context=".presentation.characters.characterDetail.CharacterDetailFragment">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/viewLoading"
+        android:id="@+id/viewLoadingCharacterDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,40 +20,37 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loading" />
 
-    <com.softcross.onepiece.presentation.component.ErrorView
-        android:id="@+id/viewError"
+    <com.softcross.onepiece.presentation.components.ErrorView
+        android:id="@+id/viewErrorCharacterDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.softcross.onepiece.presentation.component.OnePieceUiToolbarComponent
+    <com.softcross.onepiece.presentation.components.ToolbarView
         android:id="@+id/onePieceUiToolbarComponent"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:detail_title="MONKEY D. LUFFY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.softcross.onepiece.presentation.component.CharacterDetailView
+    <com.softcross.onepiece.presentation.components.DetailBoxView
         android:id="@+id/viewCharacterDetailPicture"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_below="@id/onePieceUiToolbarComponent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/onePieceUiToolbarComponent">
+        android:layout_marginEnd="16dp">
 
 
         <ImageView
-            android:background="@drawable/bg_fav_icon"
-            android:padding="4dp"
             android:id="@+id/ivFav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,30 +59,30 @@
             android:layout_gravity="top|end"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="18dp"
+            android:background="@drawable/bg_fav_icon"
+            android:padding="4dp"
             android:src="@drawable/ic_add_favorite"
             app:tint="@color/primaryColor" />
 
 
-    </com.softcross.onepiece.presentation.component.CharacterDetailView>
+    </com.softcross.onepiece.presentation.components.DetailBoxView>
 
-    <com.softcross.onepiece.presentation.component.CharacterDetailView
+    <com.softcross.onepiece.presentation.components.DetailBoxView
         android:id="@+id/characterDetailView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/viewCharacterDetailPicture"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewCharacterDetailPicture">
+        android:padding="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.softcross.onepiece.presentation.component.DetailLayoutView
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
                 android:id="@+id/viewInfoStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,7 +91,7 @@
                 app:image="@drawable/ic_status"
                 app:info_title="Status" />
 
-            <com.softcross.onepiece.presentation.component.DetailLayoutView
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
                 android:id="@+id/viewInfoCrew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -102,17 +100,17 @@
                 app:image="@drawable/ic_crew"
                 app:info_title="Crew" />
 
-            <com.softcross.onepiece.presentation.component.DetailLayoutView
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
                 android:id="@+id/viewInfoDevilFruit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginVertical="4dp"
-                app:image="@drawable/ic_devilfruit"
+                app:image="@drawable/ic_devil_fruit"
                 app:info_title="Devil Fruit" />
 
 
-            <com.softcross.onepiece.presentation.component.DetailLayoutView
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
                 android:id="@+id/viewInfoOrigin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,7 +119,7 @@
                 app:image="@drawable/ic_location"
                 app:info_title="Origin" />
 
-            <com.softcross.onepiece.presentation.component.DetailLayoutView
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
                 android:id="@+id/viewInfoOccupation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,7 +128,7 @@
                 app:image="@drawable/ic_occupation"
                 app:info_title="Occupation" />
 
-            <com.softcross.onepiece.presentation.component.DetailLayoutView
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
                 android:id="@+id/viewInfoAbilities"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,7 +137,7 @@
                 app:image="@drawable/ic_abilities"
                 app:info_title="Abilities" />
 
-            <com.softcross.onepiece.presentation.component.DetailLayoutView
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
                 android:id="@+id/viewInfoDiamond"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -148,7 +146,7 @@
                 app:image="@drawable/ic_diamond"
                 app:info_title="Bounty" />
         </LinearLayout>
-    </com.softcross.onepiece.presentation.component.CharacterDetailView>
+    </com.softcross.onepiece.presentation.components.DetailBoxView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

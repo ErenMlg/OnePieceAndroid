@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp">
+
+    <com.softcross.onepiece.presentation.components.DetailBoxView
+        android:id="@+id/viewDevilFruitImage"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+
+    <com.softcross.onepiece.presentation.components.DetailBoxView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewDevilFruitImage"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:orientation="vertical">
+
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
+                android:id="@+id/viewInfoDevilFruitName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                app:image="@drawable/ic_devil_fruit"
+                app:info_title="Devil Fruit Name" />
+
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
+                android:id="@+id/viewInfoDevilFruitType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                app:image="@drawable/ic_type"
+                app:info_title="Devil Fruit Type" />
+
+        </LinearLayout>
+
+    </com.softcross.onepiece.presentation.components.DetailBoxView>
+
+</RelativeLayout>

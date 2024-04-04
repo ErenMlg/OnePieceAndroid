@@ -2,6 +2,10 @@ package com.softcross.onepiece.core.network.source.rest
 
 import com.softcross.onepiece.core.network.dto.character.CharacterDto
 import com.softcross.onepiece.core.network.dto.character.CharacterResponse
+import com.softcross.onepiece.core.network.dto.crew.CrewDto
+import com.softcross.onepiece.core.network.dto.crew.CrewResponse
+import com.softcross.onepiece.core.network.dto.devilFruit.DevilFruitResponse
+import com.softcross.onepiece.core.network.dto.occupation.OccupationResponse
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -13,4 +17,22 @@ class RestDataSourceImpl @Inject constructor(private val onePieceRestApi: OnePie
     override suspend fun getSingleCharacter(id: String): Response<CharacterDto> {
         return onePieceRestApi.getSingleCharacters(id)
     }
+
+    override suspend fun getAllCrews(): Response<CrewResponse> {
+        return onePieceRestApi.getAllCrews()
+    }
+
+    override suspend fun getSingleCrew(id: String): Response<CrewDto> {
+        return onePieceRestApi.getSingleCrew(id)
+    }
+
+    override suspend fun getALlDevilFruits(): Response<DevilFruitResponse> {
+        return onePieceRestApi.getDevilFruits()
+    }
+
+    override suspend fun getALlOccupations(): Response<OccupationResponse> {
+        return onePieceRestApi.getAllOccupations()
+    }
+
+
 }

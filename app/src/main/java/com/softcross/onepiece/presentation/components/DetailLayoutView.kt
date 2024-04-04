@@ -1,4 +1,4 @@
-package com.softcross.onepiece.presentation.component
+package com.softcross.onepiece.presentation.components
 
 import android.content.Context
 import android.util.AttributeSet
@@ -19,13 +19,12 @@ class DetailLayoutView @JvmOverloads constructor(
 
     init {
         addView(binding.root)
-        context.withStyledAttributes(attributeSet, R.styleable.CharacterInfoLayout) {
-            val title = getString(R.styleable.CharacterInfoLayout_info_title)
-            val image = getDrawable(R.styleable.CharacterInfoLayout_image)
+        context.withStyledAttributes(attributeSet, R.styleable.DetailInfoLayout) {
+            val title = getString(R.styleable.DetailInfoLayout_info_title)
+            val image = getDrawable(R.styleable.DetailInfoLayout_image)
             with(binding) {
                 txtInfoTitle.text = title
                 iwInfo.setImageDrawable(image)
-                txtInfoValue.text = "maiorum latine voluptatum sem nostra phasellus aliquet posse delenit offendit dicam decore prompta voluptatum porro scripserit evertitur mea tota constituam"
             }
         }
     }

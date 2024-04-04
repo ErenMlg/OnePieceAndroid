@@ -28,4 +28,37 @@
             app:popUpTo="@id/charactersFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/crewsFragment"
+        android:name="com.softcross.onepiece.presentation.crews.CrewsFragment"
+        android:label="fragment_crews"
+        tools:layout="@layout/fragment_crews" >
+        <action
+            android:id="@+id/crew_to_detail"
+            app:destination="@id/crewDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/crewDetailFragment"
+        android:name="com.softcross.onepiece.presentation.crews.crewDetail.CrewDetailFragment"
+        android:label="fragment_crew_detail"
+        tools:layout="@layout/fragment_crew_detail" >
+        <argument
+            android:name="uuid"
+            app:argType="string" />
+        <action
+            android:id="@+id/detail_to_all_crews"
+            app:destination="@id/crewsFragment"
+            app:popUpTo="@id/crewsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/devilFruitsFragment"
+        android:name="com.softcross.onepiece.presentation.devilFruits.DevilFruitsFragment"
+        android:label="fragment_devil_fruits"
+        tools:layout="@layout/fragment_devil_fruits" />
+    <fragment
+        android:id="@+id/occupationsFragment"
+        android:name="com.softcross.onepiece.presentation.occupations.OccupationsFragment"
+        android:label="fragment_occupations"
+        tools:layout="@layout/fragment_occupations" />
 </navigation>

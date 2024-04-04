@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewModel)
     //Hilt
     implementation(libs.hilt.adroid)
+    implementation(libs.androidx.fragment.ktx)
     ksp(libs.hilt.compiler)
     //Picasso
     implementation(libs.picasso)

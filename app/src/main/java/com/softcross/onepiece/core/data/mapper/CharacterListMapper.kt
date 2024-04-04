@@ -6,10 +6,10 @@ import com.softcross.onepiece.core.network.dto.character.CharacterResponse
 import retrofit2.Response
 import javax.inject.Inject
 
-class OnePieceCharacterListMapper @Inject constructor() :
+class CharacterListMapper @Inject constructor() :
     OnePieceResponseListMapper<CharacterResponse, CharacterEntity> {
     override fun map(input: Response<CharacterResponse>?): List<CharacterEntity> {
-        return input?.body()!!.results.map {
+        return input?.body()?.results?.map {
             CharacterEntity(
                 it.characterID.orEmpty(),
                 it.characterName.orEmpty(),
@@ -22,7 +22,7 @@ class OnePieceCharacterListMapper @Inject constructor() :
                 it.characterAbilities.orEmpty(),
                 it.characterPicture.orEmpty()
             )
-        }
+        } ?: emptyList()
     }
 
 }

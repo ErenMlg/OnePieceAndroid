@@ -1,10 +1,9 @@
-package com.softcross.onepiece.presentation.component
+package com.softcross.onepiece.presentation.components
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
-import androidx.core.app.NotificationCompat.MessagingStyle.Message
 import androidx.core.content.withStyledAttributes
 import com.softcross.onepiece.R
 import com.softcross.onepiece.databinding.LayoutErrorBinding

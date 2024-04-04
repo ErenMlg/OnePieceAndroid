@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp">
+
+    <com.softcross.onepiece.presentation.components.DetailBoxView
+        android:id="@+id/viewOccupationImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <com.softcross.onepiece.presentation.components.DetailBoxView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewOccupationImage"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:orientation="vertical">
+
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
+                android:id="@+id/viewInfoOccupationName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                app:image="@drawable/ic_occupation"
+                app:info_title="Occupation Name" />
+
+            <com.softcross.onepiece.presentation.components.DetailLayoutView
+                android:id="@+id/viewInfoOccupationDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                app:image="@drawable/ic_type"
+                app:info_title="Occupation Description" />
+
+        </LinearLayout>
+
+    </com.softcross.onepiece.presentation.components.DetailBoxView>
+
+</RelativeLayout>

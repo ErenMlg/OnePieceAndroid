@@ -1,22 +1,15 @@
 package com.softcross.onepiece.presentation
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.isVisible
-import androidx.navigation.NavController
-import androidx.navigation.NavDestination
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.softcross.onepiece.R
 import com.softcross.onepiece.databinding.ActivityMainBinding
-import com.softcross.onepiece.presentation.util.gone
-import com.softcross.onepiece.presentation.util.visible
+import com.softcross.onepiece.core.common.extension.gone
+import com.softcross.onepiece.core.common.extension.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,10 +30,13 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
-        NavigationUI.setupWithNavController(bottomNav,navHostFragment.navController)
-        navHostFragment.navController.addOnDestinationChangedListener{ _, destination, _ ->
-            when(destination.id){
+        NavigationUI.setupWithNavController(bottomNav, navHostFragment.navController)
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
                 R.id.charactersFragment -> bottomNav.visible()
+                R.id.crewsFragment -> bottomNav.visible()
+                R.id.devilFruitsFragment -> bottomNav.visible()
+                R.id.occupationsFragment -> bottomNav.visible()
                 else -> bottomNav.gone()
             }
         }

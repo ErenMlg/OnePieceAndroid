@@ -2,6 +2,10 @@ package com.softcross.onepiece.core.network.source.rest
 
 import com.softcross.onepiece.core.network.dto.character.CharacterDto
 import com.softcross.onepiece.core.network.dto.character.CharacterResponse
+import com.softcross.onepiece.core.network.dto.crew.CrewDto
+import com.softcross.onepiece.core.network.dto.crew.CrewResponse
+import com.softcross.onepiece.core.network.dto.devilFruit.DevilFruitResponse
+import com.softcross.onepiece.core.network.dto.occupation.OccupationResponse
 import retrofit2.Response
 
 interface RestDataSource {
@@ -13,5 +17,12 @@ interface RestDataSource {
     suspend fun getAllCharacters(): Response<CharacterResponse>
 
     suspend fun getSingleCharacter(id: String): Response<CharacterDto>
+
+    suspend fun getAllCrews(): Response<CrewResponse>
+
+    suspend fun getSingleCrew(id: String): Response<CrewDto>
+
+    suspend fun getALlDevilFruits(): Response<DevilFruitResponse>
+    suspend fun getALlOccupations(): Response<OccupationResponse>
 
 }

@@ -12,5 +12,5 @@ data class CrewDto(
     @SerializedName("crewName")
     val crewName: String?,
     @SerializedName("crewTotalBounty")
-    val crewTotalBounty: Long?
+    val crewTotalBounty: String?
 )

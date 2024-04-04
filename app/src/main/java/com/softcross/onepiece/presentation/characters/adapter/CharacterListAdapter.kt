@@ -8,7 +8,6 @@ import com.softcross.onepiece.databinding.ItemCharacterAdapterBinding
 import com.softcross.onepiece.databinding.ItemVideoAdapterBinding
 import com.softcross.onepiece.presentation.characters.CharacterListItem
 
-@SuppressLint("NotifyDataSetChanged")
 class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var onVideoItemClickListener: (() -> Unit)? = null
@@ -24,6 +23,7 @@ class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val items = mutableListOf<CharacterListItem>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateItems(items: List<CharacterListItem>) {
         with(this.items) {
             clear()
