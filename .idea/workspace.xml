@@ -38,17 +38,22 @@
           <theme>@style/Theme.OnePiece</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_devil_fruit_detail.xml">
-        <config>
-          <theme>@style/Theme.OnePiece</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_devil_fruits.xml">
         <config>
           <theme>@style/Theme.OnePiece</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_locations.xml">
+        <config>
+          <theme>@style/Theme.OnePiece</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_occupations.xml">
+        <config>
+          <theme>@style/Theme.OnePiece</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_sub_locations.xml">
         <config>
           <theme>@style/Theme.OnePiece</theme>
         </config>
@@ -68,7 +73,17 @@
           <theme>@style/Theme.OnePiece</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_locations_adapter.xml">
+        <config>
+          <theme>@style/Theme.OnePiece</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_occupations_adapter.xml">
+        <config>
+          <theme>@style/Theme.OnePiece</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_sub_locations_adapter.xml">
         <config>
           <theme>@style/Theme.OnePiece</theme>
         </config>
@@ -110,70 +125,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a341f1b-ef2e-47f5-96f7-49e2f7fab6b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/PicassoExtension.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CrewItemMapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CrewListMapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/DevilFruitListMapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/OccupationListMapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/domain/usecase/GetAllCrewsUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/domain/usecase/GetAllDevilFruitsUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/domain/usecase/GetAllOccupationsUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/domain/usecase/GetSingleCrewUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/crewDetail/CrewDetailFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/crewDetail/CrewDetailViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_ship.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_type.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_crew_detail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_crews.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_devil_fruits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_occupations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_crew_adapter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_devil_fruits_adapter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_occupations_adapter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/LocationListMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/SubLocationListMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/domain/usecase/GetAllLocationsUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/domain/usecase/GetAllSubLocationsByLocationUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/LocationsAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/LocationsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/LocationsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_locations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sub_locations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_locations_adapter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_sub_locations_adapter.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/di/MapperModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/di/MapperModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/entity/CrewEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/entity/CrewEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/OnePieceCharacterItemMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CharacterItemMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/OnePieceCharacterListMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CharacterListMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CharacterItemMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CharacterItemMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CharacterListMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CharacterListMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CrewItemMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CrewItemMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CrewListMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CrewListMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/DevilFruitListMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/DevilFruitListMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/OccupationListMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/OccupationListMapper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/crew/CrewDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/crew/CrewDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/location/sublocation/SubLocationOrigin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/dto/location/sublocation/SubLocationOrigin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/OnePieceRestApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/OnePieceRestApi.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/RestDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/RestDataSource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/RestDataSourceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/network/source/rest/RestDataSourceImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/CharactersFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/CharactersFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/CharactersWantedView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/WantedBannerView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/adapter/CharacterListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/adapter/CharacterListAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/adapter/CharacterViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/adapter/CharacterViewHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/characterDetail/CharacterDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/characterDetail/CharacterDetailFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/characterDetail/CharacterDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/characterDetail/CharacterDetailViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/component/DetailBoxView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/components/DetailBoxView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/component/DetailLayoutView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/components/DetailLayoutView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/component/ErrorView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/components/ErrorView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/component/OnePieceUiToolbarComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/components/ToolbarView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/util/ViewExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/ViewExtensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_back_arrow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_back_arrow.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_devilfruit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_devil_fruit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_diamond.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_diamond.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_character_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_characters.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_characters.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_character_detail_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_character_detail_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,8 +200,8 @@
         <option value="Kotlin Interface" />
         <option value="resourceFile" />
         <option value="Kotlin File" />
-        <option value="Kotlin Class" />
         <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -291,6 +277,10 @@
     </key>
     <key name="android.template.926199109">
       <recent name="com.softcross.onepiece.presentation.home" />
+    </key>
+    <key name="android.template.1357343527">
+      <recent name="com.softcross.onepiece.presentation.locations.subLocations" />
+      <recent name="com.softcross.onepiece.presentation.locations" />
     </key>
   </component>
   <component name="RunManager">

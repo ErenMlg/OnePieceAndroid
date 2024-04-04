@@ -21,10 +21,8 @@ interface OnePieceRepository {
     suspend fun getAllDevilFruits(): Flow<ResponseState<List<DevilFruitEntity>>>
 
     suspend fun getAllLocations(): Flow<ResponseState<List<LocationEntity>>>
-    suspend fun getSingleLocation(id: String): Flow<ResponseState<LocationEntity>>
 
-    suspend fun getAllSubLocations(): Flow<ResponseState<List<SubLocationEntity>>>
-    suspend fun getSingleSubLocation(id: String): Flow<ResponseState<SubLocationEntity>>
+    suspend fun getAllSubLocationsByLocation(locationID: String): Flow<ResponseState<List<SubLocationEntity>>>
 
     suspend fun getAllOccupations(): Flow<ResponseState<List<OccupationsEntity>>>
 

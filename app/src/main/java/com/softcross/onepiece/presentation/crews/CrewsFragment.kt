@@ -56,7 +56,7 @@ class CrewsFragment : Fragment(R.layout.fragment_crews) {
         }
     }
 
-    private fun handleSuccess(crewList: List<CrewListUiItem>) {
+    private fun handleSuccess(crewList: List<CrewUiItem>) {
         adapter.updateItems(crewList)
         binding.rvCrews.adapter = adapter
         contentVisible(true)

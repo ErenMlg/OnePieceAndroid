@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class SubLocationOrigin(
     @SerializedName("locationName")
-    val location:String?
+    val locationName:String?
 )

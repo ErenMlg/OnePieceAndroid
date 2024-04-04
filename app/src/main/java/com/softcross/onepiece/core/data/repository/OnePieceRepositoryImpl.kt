@@ -1,5 +1,6 @@
 package com.softcross.onepiece.core.data.repository
 
+import android.util.Log
 import com.softcross.onepiece.core.common.mapper.OnePieceResponseItemMapper
 import com.softcross.onepiece.core.common.mapper.OnePieceResponseListMapper
 import com.softcross.onepiece.core.data.ResponseState
@@ -14,7 +15,9 @@ import com.softcross.onepiece.core.data.mapper.CharacterListMapper
 import com.softcross.onepiece.core.data.mapper.CrewItemMapper
 import com.softcross.onepiece.core.data.mapper.CrewListMapper
 import com.softcross.onepiece.core.data.mapper.DevilFruitListMapper
+import com.softcross.onepiece.core.data.mapper.LocationListMapper
 import com.softcross.onepiece.core.data.mapper.OccupationListMapper
+import com.softcross.onepiece.core.data.mapper.SubLocationListMapper
 import com.softcross.onepiece.core.network.dto.character.CharacterDto
 import com.softcross.onepiece.core.network.dto.character.CharacterResponse
 import com.softcross.onepiece.core.network.dto.crew.CrewDto
@@ -34,7 +37,9 @@ class OnePieceRepositoryImpl @Inject constructor(
     private val crewListMapper: CrewListMapper,
     private val crewItemMapper: CrewItemMapper,
     private val devilFruitListMapper: DevilFruitListMapper,
-    private val occupationListMapper: OccupationListMapper
+    private val occupationListMapper: OccupationListMapper,
+    private val locationListMapper: LocationListMapper,
+    private val subLocationListMapper: SubLocationListMapper
 ) : OnePieceRepository {
     override suspend fun getAllCharacters(): Flow<ResponseState<List<CharacterEntity>>> {
         return flow {
@@ -98,19 +103,24 @@ class OnePieceRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getAllLocations(): Flow<ResponseState<List<LocationEntity>>> {
-        TODO("Not yet implemented")
+        return flow {
+            emit(ResponseState.Loading)
+            val response = restDataSource.getAllLocations()
+            emit(ResponseState.Success(locationListMapper.map(response)))
+        }.catch {
+            emit(ResponseState.Error(it.message.orEmpty()))
+        }
     }
 
-    override suspend fun getSingleLocation(id: String): Flow<ResponseState<LocationEntity>> {
-        TODO("Not yet implemented")
+    override suspend fun getAllSubLocationsByLocation(locationID: String): Flow<ResponseState<List<SubLocationEntity>>> {
+        return flow {
+            emit(ResponseState.Loading)
+            val response = restDataSource.getAllSubLocationsByLocation(locationID)
+            emit(ResponseState.Success(subLocationListMapper.map(response)))
+        }.catch {
+            emit(ResponseState.Error(it.message.orEmpty()))
+        }
     }
 
-    override suspend fun getAllSubLocations(): Flow<ResponseState<List<SubLocationEntity>>> {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun getSingleSubLocation(id: String): Flow<ResponseState<SubLocationEntity>> {
-        TODO("Not yet implemented")
-    }
 
 }

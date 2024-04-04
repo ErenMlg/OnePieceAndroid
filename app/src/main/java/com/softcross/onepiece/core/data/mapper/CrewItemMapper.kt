@@ -16,6 +16,6 @@ class CrewItemMapper @Inject constructor(): OnePieceResponseItemMapper<CrewDto, 
                 crewMainShip = crewMainShip.orEmpty(),
                 crewTotalBounty = crewTotalBounty.orEmpty()
             )
-        } ?: CrewEntity("","","","","")
+        } ?: throw Exception("Crew not found")
     }
 }

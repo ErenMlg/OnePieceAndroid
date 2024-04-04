@@ -4,6 +4,7 @@ import com.softcross.onepiece.core.common.mapper.OnePieceResponseListMapper
 import com.softcross.onepiece.core.data.entity.OccupationsEntity
 import com.softcross.onepiece.core.network.dto.occupation.OccupationResponse
 import retrofit2.Response
+import java.lang.Exception
 import javax.inject.Inject
 
 class OccupationListMapper @Inject constructor() : OnePieceResponseListMapper<OccupationResponse, OccupationsEntity> {
@@ -15,6 +16,6 @@ class OccupationListMapper @Inject constructor() : OnePieceResponseListMapper<Oc
                 it.occupationDescription.orEmpty(),
                 it.occupationPictureURL.orEmpty(),
             )
-        } ?: emptyList()
+        } ?: throw Exception("Occupations not found")
     }
 }

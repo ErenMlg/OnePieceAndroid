@@ -22,7 +22,7 @@ class CharacterListMapper @Inject constructor() :
                 it.characterAbilities.orEmpty(),
                 it.characterPicture.orEmpty()
             )
-        } ?: emptyList()
+        } ?: throw Exception("Characters not found")
     }
 
 }

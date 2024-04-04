@@ -1,5 +1,6 @@
 package com.softcross.onepiece.presentation.occupations
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -30,11 +31,13 @@ class OccupationsViewModel @Inject constructor(
                         )
                     )
 
-                    is ResponseState.Success -> _occupationUiState.postValue(
-                        OccupationsUiState.Success(
-                            responseState.data
+                    is ResponseState.Success -> {
+                        _occupationUiState.postValue(
+                            OccupationsUiState.Success(
+                                responseState.data
+                            )
                         )
-                    )
+                    }
                 }
             }
         }
@@ -44,6 +47,6 @@ class OccupationsViewModel @Inject constructor(
 
 sealed class OccupationsUiState {
     object Loading : OccupationsUiState()
-    data class Error(val errorMessage:String) : OccupationsUiState()
+    data class Error(val errorMessage: String) : OccupationsUiState()
     data class Success(val occupationList: List<OccupationsEntity>) : OccupationsUiState()
 }

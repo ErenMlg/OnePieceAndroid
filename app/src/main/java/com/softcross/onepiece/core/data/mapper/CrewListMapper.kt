@@ -17,6 +17,6 @@ class CrewListMapper @Inject constructor() :
                 it.crewMainShip.orEmpty(),
                 it.crewFlagURL.orEmpty()
             )
-        } ?: emptyList()
+        } ?: throw Exception("Crews not found")
     }
 }

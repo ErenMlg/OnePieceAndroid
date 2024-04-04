@@ -6,16 +6,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.softcross.onepiece.core.common.extension.loadBitmapWithResize
+import com.softcross.onepiece.core.data.entity.CrewEntity
 import com.softcross.onepiece.databinding.ItemCrewAdapterBinding
 
 class CrewsAdapter : RecyclerView.Adapter<CrewsAdapter.CrewsViewHolder>() {
 
     private var itemClickListener: ((Int) -> Unit)? = null
 
-    private val crewList = mutableListOf<CrewListUiItem>()
+    private val crewList = mutableListOf<CrewUiItem>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateItems(crewList: List<CrewListUiItem>) {
+    fun updateItems(crewList: List<CrewUiItem>) {
         with(this.crewList) {
             clear()
             addAll(crewList)
@@ -49,7 +50,7 @@ class CrewsAdapter : RecyclerView.Adapter<CrewsAdapter.CrewsViewHolder>() {
             }
         }
 
-        fun bind(item: CrewListUiItem) = with(binding) {
+        fun bind(item: CrewUiItem) = with(binding) {
             ivCrew.loadBitmapWithResize(item.crewImage, 500, 400)
             txtCrewName.text = item.crewName
         }

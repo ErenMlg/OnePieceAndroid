@@ -15,6 +15,6 @@ class DevilFruitListMapper @Inject constructor(): OnePieceResponseListMapper<Dev
                 it.devilFruitType.orEmpty(),
                 it.devilFruitPictureURL.orEmpty()
             )
-        } ?: emptyList()
+        } ?: throw Exception("Devil Fruits not found")
     }
 }

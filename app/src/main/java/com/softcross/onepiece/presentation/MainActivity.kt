@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.crewsFragment -> bottomNav.visible()
                 R.id.devilFruitsFragment -> bottomNav.visible()
                 R.id.occupationsFragment -> bottomNav.visible()
+                R.id.locationsFragment -> bottomNav.visible()
                 else -> bottomNav.gone()
             }
         }

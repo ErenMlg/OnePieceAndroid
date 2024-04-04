@@ -61,4 +61,28 @@
         android:name="com.softcross.onepiece.presentation.occupations.OccupationsFragment"
         android:label="fragment_occupations"
         tools:layout="@layout/fragment_occupations" />
+    <fragment
+        android:id="@+id/locationsFragment"
+        android:name="com.softcross.onepiece.presentation.locations.LocationsFragment"
+        android:label="fragment_locations"
+        tools:layout="@layout/fragment_locations" >
+        <action
+            android:id="@+id/locations_to_sub_location"
+            app:destination="@id/subLocationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subLocationsFragment"
+        android:name="com.softcross.onepiece.presentation.locations.subLocations.SubLocationsFragment"
+        android:label="fragment_sub_locations"
+        tools:layout="@layout/fragment_sub_locations" >
+        <argument
+            android:name="locationID"
+            app:argType="string" />
+        <action
+            android:id="@+id/sub_location_to_location"
+            app:destination="@id/locationsFragment" />
+        <argument
+            android:name="locationName"
+            app:argType="string" />
+    </fragment>
 </navigation>

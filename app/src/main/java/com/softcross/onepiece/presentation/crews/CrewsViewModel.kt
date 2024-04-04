@@ -8,7 +8,6 @@ import com.softcross.onepiece.core.data.ResponseState
 import com.softcross.onepiece.core.domain.usecase.GetAllCrewsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
@@ -33,7 +32,7 @@ class CrewsViewModel @Inject constructor(private val getAllCrewsUseCase: GetAllC
 
                     is ResponseState.Success -> {
                         val crewList = responseState.data.map {
-                            CrewListUiItem(
+                            CrewUiItem(
                                 it.id,
                                 it.crewFlagURL,
                                 it.crewName
@@ -51,10 +50,10 @@ class CrewsViewModel @Inject constructor(private val getAllCrewsUseCase: GetAllC
 sealed class CrewListUiState {
     object Loading : CrewListUiState()
     data class Error(val errorMessage: String) : CrewListUiState()
-    data class Success(val data: List<CrewListUiItem>) : CrewListUiState()
+    data class Success(val data: List<CrewUiItem>) : CrewListUiState()
 }
 
-data class CrewListUiItem(
+data class CrewUiItem(
     val id: String,
     val crewImage: String,
     val crewName: String

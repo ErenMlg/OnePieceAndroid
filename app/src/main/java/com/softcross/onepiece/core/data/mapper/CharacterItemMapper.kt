@@ -22,7 +22,7 @@ class CharacterItemMapper @Inject constructor() :
                 characterAbilities.orEmpty(),
                 characterPicture.orEmpty()
             )
-        } ?: CharacterEntity("", "", "", "", "", "", "", "", "", "")
+        } ?: throw Exception("Character not found")
     }
 
 

@@ -2,6 +2,7 @@ package com.softcross.onepiece.presentation.occupations
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,12 +44,14 @@ class OccupationsFragment : Fragment(R.layout.fragment_occupations) {
     }
 
     private fun handleSuccess(devilFruitList: List<OccupationsEntity>) {
+        Log.e("Hata","Handle Success")
         adapter.updateItems(devilFruitList)
         binding.rvOccupations.adapter = adapter
         contentVisible(true)
     }
 
     private fun handleError(errorMessage: String) {
+        Log.e("Hata","Handle Error")
         with(binding) {
             viewErrorOccupations.visible()
             viewLoadingOccupations.gone()
