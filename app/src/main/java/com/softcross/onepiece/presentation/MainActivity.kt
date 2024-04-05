@@ -2,10 +2,13 @@ package com.softcross.onepiece.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuItemCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUiSaveStateControl
+import androidx.navigation.ui.setupWithNavController
 import com.softcross.onepiece.R
 import com.softcross.onepiece.databinding.ActivityMainBinding
 import com.softcross.onepiece.core.common.extension.gone
@@ -17,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @OptIn(NavigationUiSaveStateControl::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,14 +34,30 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
-        NavigationUI.setupWithNavController(bottomNav, navHostFragment.navController)
+
+        NavigationUI.setupWithNavController(bottomNav, navHostFragment.navController, false)
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.charactersFragment -> bottomNav.visible()
-                R.id.crewsFragment -> bottomNav.visible()
-                R.id.devilFruitsFragment -> bottomNav.visible()
-                R.id.occupationsFragment -> bottomNav.visible()
-                R.id.locationsFragment -> bottomNav.visible()
+                R.id.charactersFragment -> {
+                    bottomNav.visible()
+                }
+
+                R.id.crewsFragment -> {
+                    bottomNav.visible()
+                }
+
+                R.id.devilFruitsFragment -> {
+                    bottomNav.visible()
+                }
+
+                R.id.occupationsFragment -> {
+                    bottomNav.visible()
+                }
+
+                R.id.locationsFragment -> {
+                    bottomNav.visible()
+                }
+
                 else -> bottomNav.gone()
             }
         }

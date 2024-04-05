@@ -66,6 +66,7 @@ class CrewsFragment : Fragment(R.layout.fragment_crews) {
         with(binding) {
             viewLoadingCrews.gone()
             rvCrews.gone()
+            viewErrorCrews.setRetryOnClick { viewModel.getAllCrews() }
             viewErrorCrews.visible()
             viewErrorCrews.setErrorMessage(errorMessage)
         }

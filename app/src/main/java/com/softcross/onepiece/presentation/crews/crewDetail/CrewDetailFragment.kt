@@ -67,6 +67,7 @@ class CrewDetailFragment : Fragment(R.layout.fragment_crew_detail) {
     private fun handleError(errorMessage: String) {
         with(binding) {
             viewErrorCrewDetail.visible()
+            viewErrorCrewDetail.setRetryOnClick { viewModel.getSingleCrew(args.uuid) }
             viewErrorCrewDetail.setErrorMessage(errorMessage)
             viewLoadingCrewDetail.gone()
             crewDetailBox.gone()

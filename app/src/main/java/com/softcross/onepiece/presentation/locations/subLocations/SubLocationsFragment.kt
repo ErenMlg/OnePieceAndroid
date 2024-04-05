@@ -51,6 +51,7 @@ class SubLocationsFragment : Fragment(R.layout.fragment_sub_locations) {
             viewLoadingSubLocations.gone()
             rvSubLocations.gone()
             viewToolbarSubLocation.gone()
+            viewErrorSubLocations.setRetryOnClick { viewModel.getAllSubLocationsByLocation(args.locationID) }
             viewErrorSubLocations.setErrorMessage(errorMessage)
         }
     }

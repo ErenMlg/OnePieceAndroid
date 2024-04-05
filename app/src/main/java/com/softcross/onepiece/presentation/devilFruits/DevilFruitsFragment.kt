@@ -62,6 +62,7 @@ class DevilFruitsFragment : Fragment(R.layout.fragment_devil_fruits) {
             viewErrorDevilFruit.visible()
             viewLoadingDevilFruit.gone()
             rvDevilFruits.gone()
+            viewErrorDevilFruit.setRetryOnClick { viewModel.getAllDevilFruits() }
             viewErrorDevilFruit.setErrorMessage(errorMessage)
         }
     }

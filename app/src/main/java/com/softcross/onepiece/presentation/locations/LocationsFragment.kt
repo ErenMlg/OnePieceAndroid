@@ -2,6 +2,7 @@ package com.softcross.onepiece.presentation.locations
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -62,6 +63,7 @@ class LocationsFragment : Fragment(R.layout.fragment_locations) {
     private fun handleError(errorMessage: String) {
         with(binding) {
             viewErrorLocations.visible()
+            viewErrorLocations.setRetryOnClick { viewModel.getAllLocations() }
             viewLoadingLocations.gone()
             rvLocations.gone()
             viewErrorLocations.setErrorMessage(errorMessage)

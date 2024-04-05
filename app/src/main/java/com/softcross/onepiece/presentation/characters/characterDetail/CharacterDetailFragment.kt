@@ -76,6 +76,7 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
     private fun handleError(errorMessage: String?) {
         binding.apply {
             viewErrorCharacterDetail.setErrorMessage(errorMessage ?: "Error")
+            viewErrorCharacterDetail.setRetryOnClick { viewModel.getCharacter(args.uuid) }
             viewErrorCharacterDetail.visible()
             viewLoadingCharacterDetail.gone()
             onePieceUiToolbarComponent.gone()

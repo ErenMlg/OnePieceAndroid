@@ -1,6 +1,7 @@
 package com.softcross.onepiece.presentation.characters
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.core.view.isVisible
@@ -54,6 +55,7 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
         binding.apply {
             viewErrorLayoutCharacters.setErrorMessage(errorMessage ?: "Error")
             viewErrorLayoutCharacters.visible()
+            viewErrorLayoutCharacters.setRetryOnClick { viewModel.getAllCharacters() }
             viewLoadingCharacters.gone()
             rvCharacters.gone()
         }

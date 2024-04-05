@@ -44,16 +44,15 @@ class OccupationsFragment : Fragment(R.layout.fragment_occupations) {
     }
 
     private fun handleSuccess(devilFruitList: List<OccupationsEntity>) {
-        Log.e("Hata","Handle Success")
         adapter.updateItems(devilFruitList)
         binding.rvOccupations.adapter = adapter
         contentVisible(true)
     }
 
     private fun handleError(errorMessage: String) {
-        Log.e("Hata","Handle Error")
         with(binding) {
             viewErrorOccupations.visible()
+            viewErrorOccupations.setRetryOnClick { viewModel.getALlOccupations() }
             viewLoadingOccupations.gone()
             rvOccupations.gone()
             viewErrorOccupations.setErrorMessage(errorMessage)
