@@ -1,13 +1,12 @@
 package com.softcross.onepiece.presentation.occupations
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.softcross.onepiece.core.data.ResponseState
-import com.softcross.onepiece.core.data.entity.OccupationsEntity
-import com.softcross.onepiece.core.domain.usecase.GetAllOccupationsUseCase
+import com.softcross.onepiece.core.data.modal.Occupations
+import com.softcross.onepiece.core.domain.GetAllOccupationsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -48,5 +47,5 @@ class OccupationsViewModel @Inject constructor(
 sealed class OccupationsUiState {
     object Loading : OccupationsUiState()
     data class Error(val errorMessage: String) : OccupationsUiState()
-    data class Success(val occupationList: List<OccupationsEntity>) : OccupationsUiState()
+    data class Success(val occupationList: List<Occupations>) : OccupationsUiState()
 }

@@ -3,9 +3,7 @@ package com.softcross.onepiece.presentation.locations.subLocations
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -13,7 +11,7 @@ import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.core.common.extension.gone
 import com.softcross.onepiece.core.common.extension.visible
-import com.softcross.onepiece.core.data.entity.SubLocationEntity
+import com.softcross.onepiece.core.data.modal.SubLocation
 import com.softcross.onepiece.databinding.FragmentSubLocationsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -56,7 +54,7 @@ class SubLocationsFragment : Fragment(R.layout.fragment_sub_locations) {
         }
     }
 
-    private fun handleSuccess(subLocationList: List<SubLocationEntity>) {
+    private fun handleSuccess(subLocationList: List<SubLocation>) {
         adapter.updateItems(subLocationList)
         binding.viewToolbarSubLocation.setTitle(args.locationName)
         binding.viewToolbarSubLocation.backClickListener { findNavController().navigate(R.id.sub_location_to_location) }

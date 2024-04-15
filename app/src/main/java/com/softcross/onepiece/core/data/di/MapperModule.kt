@@ -2,12 +2,12 @@ package com.softcross.onepiece.core.data.di
 
 import com.softcross.onepiece.core.common.mapper.OnePieceResponseItemMapper
 import com.softcross.onepiece.core.common.mapper.OnePieceResponseListMapper
-import com.softcross.onepiece.core.data.entity.CharacterEntity
-import com.softcross.onepiece.core.data.entity.CrewEntity
-import com.softcross.onepiece.core.data.entity.DevilFruitEntity
-import com.softcross.onepiece.core.data.entity.LocationEntity
-import com.softcross.onepiece.core.data.entity.OccupationsEntity
-import com.softcross.onepiece.core.data.entity.SubLocationEntity
+import com.softcross.onepiece.core.data.modal.Character
+import com.softcross.onepiece.core.data.modal.Crew
+import com.softcross.onepiece.core.data.modal.DevilFruit
+import com.softcross.onepiece.core.data.modal.Location
+import com.softcross.onepiece.core.data.modal.Occupations
+import com.softcross.onepiece.core.data.modal.SubLocation
 import com.softcross.onepiece.core.data.mapper.CharacterItemMapper
 import com.softcross.onepiece.core.data.mapper.CharacterListMapper
 import com.softcross.onepiece.core.data.mapper.CrewItemMapper
@@ -36,33 +36,33 @@ abstract class MapperModule {
 
     @Binds
     @Singleton
-    abstract fun bindCharacterListMapper(onePieceCharacterMapper: CharacterListMapper): OnePieceResponseListMapper<CharacterResponse, CharacterEntity>
+    abstract fun bindCharacterListMapper(onePieceCharacterMapper: CharacterListMapper): OnePieceResponseListMapper<CharacterResponse, Character>
 
     @Binds
     @Singleton
-    abstract fun bindCharacterItemMapper(characterItemMapper: CharacterItemMapper): OnePieceResponseItemMapper<CharacterDto, CharacterEntity>
+    abstract fun bindCharacterItemMapper(characterItemMapper: CharacterItemMapper): OnePieceResponseItemMapper<CharacterDto, Character>
 
     @Binds
     @Singleton
-    abstract fun bindCrewListMapper(crewListMapper: CrewListMapper): OnePieceResponseListMapper<CrewResponse, CrewEntity>
+    abstract fun bindCrewListMapper(crewListMapper: CrewListMapper): OnePieceResponseListMapper<CrewResponse, Crew>
 
     @Binds
     @Singleton
-    abstract fun bindCrewItemMapper(crewItemMapper: CrewItemMapper): OnePieceResponseItemMapper<CrewDto, CrewEntity>
+    abstract fun bindCrewItemMapper(crewItemMapper: CrewItemMapper): OnePieceResponseItemMapper<CrewDto, Crew>
 
     @Binds
     @Singleton
-    abstract fun bindDevilFruitListMapper(devilFruitListMapper: DevilFruitListMapper): OnePieceResponseListMapper<DevilFruitResponse, DevilFruitEntity>
+    abstract fun bindDevilFruitListMapper(devilFruitListMapper: DevilFruitListMapper): OnePieceResponseListMapper<DevilFruitResponse, DevilFruit>
 
     @Binds
     @Singleton
-    abstract fun bindOccupationListMapper(occupationListMapper: OccupationListMapper): OnePieceResponseListMapper<OccupationResponse, OccupationsEntity>
+    abstract fun bindOccupationListMapper(occupationListMapper: OccupationListMapper): OnePieceResponseListMapper<OccupationResponse, Occupations>
 
     @Binds
     @Singleton
-    abstract fun bindLocationsListMapper(locationListMapper: LocationListMapper): OnePieceResponseListMapper<LocationResponse, LocationEntity>
+    abstract fun bindLocationsListMapper(locationListMapper: LocationListMapper): OnePieceResponseListMapper<LocationResponse, Location>
 
     @Binds
     @Singleton
-    abstract fun bindSubLocationsMapper(subLocationListMapper: SubLocationListMapper): OnePieceResponseListMapper<SubLocationResponse, SubLocationEntity>
+    abstract fun bindSubLocationsMapper(subLocationListMapper: SubLocationListMapper): OnePieceResponseListMapper<SubLocationResponse, SubLocation>
 }

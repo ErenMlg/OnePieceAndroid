@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.softcross.onepiece.core.data.ResponseState
-import com.softcross.onepiece.core.domain.usecase.GetAllCrewsUseCase
+import com.softcross.onepiece.core.domain.GetAllCrewsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

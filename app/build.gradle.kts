@@ -68,6 +68,11 @@ dependencies {
     implementation(libs.hilt.adroid)
     implementation(libs.androidx.fragment.ktx)
     ksp(libs.hilt.compiler)
+    //Room
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+    ksp(libs.room.compiler)
     //Picasso
     implementation(libs.picasso)
     //Lottie

@@ -17,6 +17,7 @@ ksp = "1.9.0-1.0.12"
 picasso = "2.8"
 lottie_version = '5.2.0'
 fragmentKtx = "1.6.2"
+room = '2.6.1'
 
 [libraries]
 #Android Core
@@ -41,6 +42,10 @@ androidx-lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-
 #Hilt
 hilt-adroid = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+#Room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 #Picasso
 picasso = { group = "com.squareup.picasso", name = "picasso", version.ref = "picasso" }
 #Lottie

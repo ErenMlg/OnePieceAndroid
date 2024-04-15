@@ -1,6 +1,6 @@
-package com.softcross.onepiece.core.data.entity
+package com.softcross.onepiece.core.data.modal
 
-data class CharacterEntity(
+data class Character(
     val id:String,
     val characterName:String,
     val characterStatus:String,

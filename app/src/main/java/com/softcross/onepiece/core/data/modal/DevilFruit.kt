@@ -1,6 +1,6 @@
-package com.softcross.onepiece.core.data.entity
+package com.softcross.onepiece.core.data.modal
 
-data class DevilFruitEntity(
+data class DevilFruit(
     val id:String,
     val devilFruitName:String,
     val devilFruitType:String,

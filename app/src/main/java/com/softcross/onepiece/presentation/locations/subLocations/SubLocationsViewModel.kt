@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.softcross.onepiece.core.data.ResponseState
-import com.softcross.onepiece.core.data.entity.SubLocationEntity
-import com.softcross.onepiece.core.domain.usecase.GetAllSubLocationsByLocationUseCase
+import com.softcross.onepiece.core.data.modal.SubLocation
+import com.softcross.onepiece.core.domain.GetAllSubLocationsByLocationUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -46,5 +46,5 @@ class SubLocationsViewModel @Inject constructor(
 sealed class SubLocationsUiState {
     object Loading : SubLocationsUiState()
     data class Error(val errorMessage: String) : SubLocationsUiState()
-    data class Success(val data: List<SubLocationEntity>) : SubLocationsUiState()
+    data class Success(val data: List<SubLocation>) : SubLocationsUiState()
 }

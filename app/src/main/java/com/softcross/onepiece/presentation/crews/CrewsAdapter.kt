@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.softcross.onepiece.core.common.extension.loadBitmapWithResize
-import com.softcross.onepiece.core.data.entity.CrewEntity
 import com.softcross.onepiece.databinding.ItemCrewAdapterBinding
 
 class CrewsAdapter : RecyclerView.Adapter<CrewsAdapter.CrewsViewHolder>() {

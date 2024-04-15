@@ -1,6 +1,6 @@
-package com.softcross.onepiece.core.data.entity
+package com.softcross.onepiece.core.data.modal
 
-data class CrewEntity(
+data class Crew(
     val id:String,
     val crewName:String,
     val crewTotalBounty:String,

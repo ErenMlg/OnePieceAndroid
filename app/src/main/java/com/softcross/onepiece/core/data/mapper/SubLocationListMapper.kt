@@ -1,15 +1,15 @@
 package com.softcross.onepiece.core.data.mapper
 
 import com.softcross.onepiece.core.common.mapper.OnePieceResponseListMapper
-import com.softcross.onepiece.core.data.entity.SubLocationEntity
+import com.softcross.onepiece.core.data.modal.SubLocation
 import com.softcross.onepiece.core.network.dto.location.sublocation.SubLocationResponse
 import retrofit2.Response
 import javax.inject.Inject
 
-class SubLocationListMapper @Inject constructor(): OnePieceResponseListMapper<SubLocationResponse, SubLocationEntity> {
-    override fun map(input: Response<SubLocationResponse>?): List<SubLocationEntity> {
+class SubLocationListMapper @Inject constructor(): OnePieceResponseListMapper<SubLocationResponse, SubLocation> {
+    override fun map(input: Response<SubLocationResponse>?): List<SubLocation> {
         return input?.body()?.results?.map {
-            SubLocationEntity(
+            SubLocation(
                 it.subLocationID.orEmpty(),
                 it.subLocationName.orEmpty(),
                 it.subLocationPictureURL.orEmpty(),

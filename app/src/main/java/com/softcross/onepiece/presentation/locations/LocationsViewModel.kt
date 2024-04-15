@@ -5,10 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.softcross.onepiece.core.data.ResponseState
-import com.softcross.onepiece.core.data.entity.DevilFruitEntity
-import com.softcross.onepiece.core.data.entity.LocationEntity
-import com.softcross.onepiece.core.domain.usecase.GetAllLocationsUseCase
-import com.softcross.onepiece.presentation.devilFruits.DevilFruitUiState
+import com.softcross.onepiece.core.data.modal.Location
+import com.softcross.onepiece.core.domain.GetAllLocationsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -46,5 +44,5 @@ class LocationsViewModel @Inject constructor(private val getAllLocationsUseCase:
 sealed class LocationsUiState {
     object Loading : LocationsUiState()
     data class Error(val errorMessage: String) : LocationsUiState()
-    data class Success(val data: List<LocationEntity>) : LocationsUiState()
+    data class Success(val data: List<Location>) : LocationsUiState()
 }

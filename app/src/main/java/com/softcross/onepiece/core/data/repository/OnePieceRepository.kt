@@ -1,29 +1,59 @@
 package com.softcross.onepiece.core.data.repository
 
 import com.softcross.onepiece.core.data.ResponseState
-import com.softcross.onepiece.core.data.entity.CharacterEntity
-import com.softcross.onepiece.core.data.entity.CrewEntity
-import com.softcross.onepiece.core.data.entity.DevilFruitEntity
-import com.softcross.onepiece.core.data.entity.LocationEntity
-import com.softcross.onepiece.core.data.entity.OccupationsEntity
-import com.softcross.onepiece.core.data.entity.SubLocationEntity
+import com.softcross.onepiece.core.data.modal.Character
+import com.softcross.onepiece.core.data.modal.Crew
+import com.softcross.onepiece.core.data.modal.DevilFruit
+import com.softcross.onepiece.core.data.modal.Location
+import com.softcross.onepiece.core.data.modal.Occupations
+import com.softcross.onepiece.core.data.modal.SubLocation
+import com.softcross.onepiece.core.local.entity.FavoriteCharacterEntity
+import com.softcross.onepiece.core.local.entity.FavoriteCrewEntity
+import com.softcross.onepiece.core.local.entity.FavoriteDevilFruitEntity
+import com.softcross.onepiece.core.local.entity.FavoriteLocationEntity
+import com.softcross.onepiece.core.local.entity.FavoriteOccupationEntity
+import com.softcross.onepiece.core.local.entity.FavoriteSubLocationEntity
 import kotlinx.coroutines.flow.Flow
 
 
 interface OnePieceRepository {
 
-    suspend fun getAllCharacters(): Flow<ResponseState<List<CharacterEntity>>>
-    suspend fun getSingleCharacter(id: String): Flow<ResponseState<CharacterEntity>>
+    //Characters
+    suspend fun getAllCharacters(): Flow<ResponseState<List<Character>>>
+    suspend fun getSingleCharacter(id: String): Flow<ResponseState<Character>>
+    fun getAllFavoriteCharacters(): Flow<List<Character>>
+    suspend fun addFavoriteCharacter(favoriteCharacterEntity: Character)
+    suspend fun deleteFavoriteCharacter(favoriteCharacterEntity: Character)
 
-    suspend fun getAllCrews(): Flow<ResponseState<List<CrewEntity>>>
-    suspend fun getSingleCrew(id: String): Flow<ResponseState<CrewEntity>>
+    //Crews
+    suspend fun getAllCrews(): Flow<ResponseState<List<Crew>>>
+    suspend fun getSingleCrew(id: String): Flow<ResponseState<Crew>>
+    fun getAllFavoriteCrews(): Flow<List<Crew>>
+    suspend fun addFavoriteCrew(favoriteCrewEntity: Crew)
+    suspend fun deleteFavoriteCrew(favoriteCrewEntity: Crew)
 
-    suspend fun getAllDevilFruits(): Flow<ResponseState<List<DevilFruitEntity>>>
+    //Devil Fruit
+    suspend fun getAllDevilFruits(): Flow<ResponseState<List<DevilFruit>>>
+    fun getAllFavoriteDevilFruits(): Flow<List<DevilFruit>>
+    suspend fun addFavoriteDevilFruit(devilFruitEntity: DevilFruit)
+    suspend fun deleteFavoriteDevilFruit(devilFruitEntity: DevilFruit)
 
-    suspend fun getAllLocations(): Flow<ResponseState<List<LocationEntity>>>
+    //Location
+    suspend fun getAllLocations(): Flow<ResponseState<List<Location>>>
+    fun getAllFavoriteLocations(): Flow<List<Location>>
+    suspend fun addFavoriteLocation(favoriteLocationEntity: Location)
+    suspend fun deleteFavoriteLocation(favoriteLocationEntity: Location)
 
-    suspend fun getAllSubLocationsByLocation(locationID: String): Flow<ResponseState<List<SubLocationEntity>>>
+    //SubLocation
+    suspend fun getAllSubLocationsByLocation(locationID: String): Flow<ResponseState<List<SubLocation>>>
+    fun getAllFavoriteSubLocations(): Flow<List<SubLocation>>
+    suspend fun addFavoriteSubLocation(favoriteSubLocationEntity: SubLocation)
+    suspend fun deleteFavoriteSubLocation(favoriteSubLocationEntity: SubLocation)
 
-    suspend fun getAllOccupations(): Flow<ResponseState<List<OccupationsEntity>>>
+    //Occupation
+    suspend fun getAllOccupations(): Flow<ResponseState<List<Occupations>>>
+    fun getAllFavoriteOccupations(): Flow<List<Occupations>>
+    suspend fun addFavoriteOccupation(favoriteOccupationEntity: Occupations)
+    suspend fun deleteFavoriteOccupation(favoriteOccupationEntity: Occupations)
 
 }

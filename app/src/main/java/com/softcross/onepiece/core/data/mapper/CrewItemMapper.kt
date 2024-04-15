@@ -1,15 +1,15 @@
 package com.softcross.onepiece.core.data.mapper
 
 import com.softcross.onepiece.core.common.mapper.OnePieceResponseItemMapper
-import com.softcross.onepiece.core.data.entity.CrewEntity
+import com.softcross.onepiece.core.data.modal.Crew
 import com.softcross.onepiece.core.network.dto.crew.CrewDto
 import retrofit2.Response
 import javax.inject.Inject
 
-class CrewItemMapper @Inject constructor(): OnePieceResponseItemMapper<CrewDto, CrewEntity> {
-    override fun map(input: Response<CrewDto>?): CrewEntity {
+class CrewItemMapper @Inject constructor(): OnePieceResponseItemMapper<CrewDto, Crew> {
+    override fun map(input: Response<CrewDto>?): Crew {
         return input?.body()?.run {
-            CrewEntity(
+            Crew(
                 id = crewID.orEmpty(),
                 crewName = crewName.orEmpty(),
                 crewFlagURL = crewFlagURL.orEmpty(),

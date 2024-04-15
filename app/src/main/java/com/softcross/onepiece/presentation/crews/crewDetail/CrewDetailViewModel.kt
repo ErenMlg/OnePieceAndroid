@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.softcross.onepiece.core.data.ResponseState
-import com.softcross.onepiece.core.data.entity.CrewEntity
-import com.softcross.onepiece.core.domain.usecase.GetSingleCrewUseCase
+import com.softcross.onepiece.core.data.modal.Crew
+import com.softcross.onepiece.core.domain.GetSingleCrewUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -43,7 +43,7 @@ class CrewDetailViewModel @Inject constructor(
 sealed class CrewDetailUiState {
     object Loading : CrewDetailUiState()
     data class Error(val errorMessage: String = "") : CrewDetailUiState()
-    data class Success(val data: CrewEntity) : CrewDetailUiState()
+    data class Success(val data: Crew) : CrewDetailUiState()
 }
 
 data class CrewDetailUiItem(

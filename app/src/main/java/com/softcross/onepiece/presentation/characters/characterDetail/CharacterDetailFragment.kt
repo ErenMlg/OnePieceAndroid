@@ -1,11 +1,8 @@
 package com.softcross.onepiece.presentation.characters.characterDetail
 
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.core.graphics.drawable.toBitmapOrNull
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -16,11 +13,8 @@ import com.softcross.onepiece.databinding.FragmentCharacterDetailBinding
 import com.softcross.onepiece.core.common.extension.gone
 import com.softcross.onepiece.core.common.extension.loadOnBitmap
 import com.softcross.onepiece.core.common.extension.visible
-import com.softcross.onepiece.core.data.entity.CharacterEntity
-import com.squareup.picasso.Picasso
-import com.squareup.picasso.Target
+import com.softcross.onepiece.core.data.modal.Character
 import dagger.hilt.android.AndroidEntryPoint
-import java.lang.Exception
 
 @AndroidEntryPoint
 class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
@@ -57,7 +51,7 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
         }
     }
 
-    private fun handleSuccess(character: CharacterEntity) {
+    private fun handleSuccess(character: Character) {
         binding.apply {
             viewCharacterDetailPicture.loadOnBitmap(character.characterPictureURL)
             onePieceUiToolbarComponent.setTitle(character.characterName)

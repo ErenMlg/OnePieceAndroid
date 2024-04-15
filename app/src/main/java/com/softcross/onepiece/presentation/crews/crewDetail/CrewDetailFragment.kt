@@ -12,7 +12,7 @@ import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.core.common.extension.gone
 import com.softcross.onepiece.core.common.extension.loadOnBitmap
 import com.softcross.onepiece.core.common.extension.visible
-import com.softcross.onepiece.core.data.entity.CrewEntity
+import com.softcross.onepiece.core.data.modal.Crew
 import com.softcross.onepiece.databinding.FragmentCrewDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -51,7 +51,7 @@ class CrewDetailFragment : Fragment(R.layout.fragment_crew_detail) {
         }
     }
 
-    private fun handleSuccess(crew: CrewEntity) {
+    private fun handleSuccess(crew: Crew) {
         with(binding) {
             crewFlagDetailBox.loadOnBitmap(crew.crewFlagURL)
             viewInfoShip.setInfo(crew.crewMainShip)

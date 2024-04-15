@@ -3,16 +3,13 @@ package com.softcross.onepiece.presentation.devilFruits
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.core.view.get
 import androidx.core.view.isVisible
 import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.core.common.extension.gone
 import com.softcross.onepiece.core.common.extension.visible
-import com.softcross.onepiece.core.data.entity.DevilFruitEntity
+import com.softcross.onepiece.core.data.modal.DevilFruit
 import com.softcross.onepiece.databinding.FragmentDevilFruitsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -51,7 +48,7 @@ class DevilFruitsFragment : Fragment(R.layout.fragment_devil_fruits) {
         }
     }
 
-    private fun handleSuccess(devilFruits: List<DevilFruitEntity>) {
+    private fun handleSuccess(devilFruits: List<DevilFruit>) {
         adapter.updateItems(devilFruits)
         binding.rvDevilFruits.adapter = adapter
         contentVisible(true)

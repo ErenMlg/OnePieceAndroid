@@ -1,6 +1,6 @@
-package com.softcross.onepiece.core.data.entity
+package com.softcross.onepiece.core.data.modal
 
-data class LocationEntity(
+data class Location(
     val id:String,
     val locationName:String,
     val locationPictureURL:String

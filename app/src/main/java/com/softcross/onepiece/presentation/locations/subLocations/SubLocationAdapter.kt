@@ -6,15 +6,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.softcross.onepiece.core.common.extension.loadOnBitmap
-import com.softcross.onepiece.core.data.entity.SubLocationEntity
+import com.softcross.onepiece.core.data.modal.SubLocation
 import com.softcross.onepiece.databinding.ItemSubLocationsAdapterBinding
 
 class SubLocationAdapter : RecyclerView.Adapter<SubLocationAdapter.SubLocationViewHolder>() {
 
-    private val subLocationList = mutableListOf<SubLocationEntity>()
+    private val subLocationList = mutableListOf<SubLocation>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateItems(subLocationList: List<SubLocationEntity>) {
+    fun updateItems(subLocationList: List<SubLocation>) {
         with(this.subLocationList) {
             clear()
             addAll(subLocationList)
@@ -36,7 +36,7 @@ class SubLocationAdapter : RecyclerView.Adapter<SubLocationAdapter.SubLocationVi
     inner class SubLocationViewHolder(private val binding: ItemSubLocationsAdapterBinding) :
         ViewHolder(binding.root) {
 
-        fun bind(item: SubLocationEntity) = with(binding) {
+        fun bind(item: SubLocation) = with(binding) {
             viewInfoSubLocationFirstApperance.setInfo(item.firstAppearance)
             viewSubLocationImage.loadOnBitmap(item.subLocationPictureURL)
             txtSubLocationName.text = item.subLocationName

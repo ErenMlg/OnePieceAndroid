@@ -6,16 +6,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.softcross.onepiece.core.common.extension.loadOnBitmap
-import com.softcross.onepiece.core.common.extension.loadOnBitmapWithResize
-import com.softcross.onepiece.core.data.entity.DevilFruitEntity
+import com.softcross.onepiece.core.data.modal.DevilFruit
 import com.softcross.onepiece.databinding.ItemDevilFruitsAdapterBinding
 
 class DevilFruitsAdapter : RecyclerView.Adapter<DevilFruitsAdapter.DevilFruitsViewHolder>() {
 
-    private val devilFruitList = mutableListOf<DevilFruitEntity>()
+    private val devilFruitList = mutableListOf<DevilFruit>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateItems(devilFruitList: List<DevilFruitEntity>) {
+    fun updateItems(devilFruitList: List<DevilFruit>) {
         with(this.devilFruitList) {
             clear()
             addAll(devilFruitList)
@@ -41,7 +40,7 @@ class DevilFruitsAdapter : RecyclerView.Adapter<DevilFruitsAdapter.DevilFruitsVi
     inner class DevilFruitsViewHolder(private val binding: ItemDevilFruitsAdapterBinding) :
         ViewHolder(binding.root) {
 
-        fun bind(item: DevilFruitEntity) = with(binding) {
+        fun bind(item: DevilFruit) = with(binding) {
             viewDevilFruitImage.loadOnBitmap(item.devilFruitPictureURL)
             viewInfoDevilFruitName.setInfo(item.devilFruitName)
             viewInfoDevilFruitType.setInfo(item.devilFruitType)

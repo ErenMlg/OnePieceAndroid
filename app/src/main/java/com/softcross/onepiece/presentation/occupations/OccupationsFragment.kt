@@ -2,17 +2,14 @@ package com.softcross.onepiece.presentation.occupations
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isVisible
 import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.core.common.extension.gone
 import com.softcross.onepiece.core.common.extension.visible
-import com.softcross.onepiece.core.data.entity.OccupationsEntity
+import com.softcross.onepiece.core.data.modal.Occupations
 import com.softcross.onepiece.databinding.FragmentOccupationsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,7 +40,7 @@ class OccupationsFragment : Fragment(R.layout.fragment_occupations) {
         }
     }
 
-    private fun handleSuccess(devilFruitList: List<OccupationsEntity>) {
+    private fun handleSuccess(devilFruitList: List<Occupations>) {
         adapter.updateItems(devilFruitList)
         binding.rvOccupations.adapter = adapter
         contentVisible(true)

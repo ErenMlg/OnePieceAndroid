@@ -1,6 +1,6 @@
-package com.softcross.onepiece.core.data.entity
+package com.softcross.onepiece.core.data.modal
 
-data class OccupationsEntity(
+data class Occupations(
     val id: String,
     val occupationName:String,
     val occupationDesc:String,

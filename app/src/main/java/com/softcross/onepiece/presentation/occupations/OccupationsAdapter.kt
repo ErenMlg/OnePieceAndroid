@@ -5,16 +5,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.softcross.onepiece.core.common.extension.loadOnBitmap
-import com.softcross.onepiece.core.common.extension.loadOnBitmapWithResize
-import com.softcross.onepiece.core.data.entity.OccupationsEntity
+import com.softcross.onepiece.core.data.modal.Occupations
 import com.softcross.onepiece.databinding.ItemOccupationsAdapterBinding
 
 class OccupationsAdapter : RecyclerView.Adapter<OccupationsAdapter.OccupationsViewHolder>() {
 
-        private val occupationList = mutableListOf<OccupationsEntity>()
+        private val occupationList = mutableListOf<Occupations>()
 
         @SuppressLint("NotifyDataSetChanged")
-        fun updateItems(devilFruitList: List<OccupationsEntity>) {
+        fun updateItems(devilFruitList: List<Occupations>) {
             with(this.occupationList) {
                 clear()
                 addAll(devilFruitList)
@@ -40,7 +39,7 @@ class OccupationsAdapter : RecyclerView.Adapter<OccupationsAdapter.OccupationsVi
         inner class OccupationsViewHolder(private val binding: ItemOccupationsAdapterBinding) :
             RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(item: OccupationsEntity) = with(binding) {
+            fun bind(item: Occupations) = with(binding) {
                 viewOccupationImage.loadOnBitmap(item.occupationPictureURL)
                 viewInfoOccupationName.setInfo(item.occupationName)
                 viewInfoOccupationDesc.setInfo(item.occupationDesc)

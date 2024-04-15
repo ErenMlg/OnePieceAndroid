@@ -5,17 +5,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.softcross.onepiece.core.common.extension.loadBitmapWithResize
-import com.softcross.onepiece.core.data.entity.LocationEntity
+import com.softcross.onepiece.core.data.modal.Location
 import com.softcross.onepiece.databinding.ItemLocationsAdapterBinding
 
 class LocationsAdapter : RecyclerView.Adapter<LocationsAdapter.LocationsViewHolder>() {
 
     private var itemClickListener: ((Int) -> Unit)? = null
 
-    private val locationsList = mutableListOf<LocationEntity>()
+    private val locationsList = mutableListOf<Location>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateItems(locationsList: List<LocationEntity>) {
+    fun updateItems(locationsList: List<Location>) {
         with(this.locationsList) {
             clear()
             addAll(locationsList)
@@ -49,7 +49,7 @@ class LocationsAdapter : RecyclerView.Adapter<LocationsAdapter.LocationsViewHold
             }
         }
 
-        fun bind(item: LocationEntity) = with(binding) {
+        fun bind(item: Location) = with(binding) {
             ivLocations.loadBitmapWithResize(item.locationPictureURL, 500, 400)
             txtLocationsName.text = item.locationName
         }
