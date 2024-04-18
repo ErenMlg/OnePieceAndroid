@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OnePiece</string>
+    <string name="app_name">One Piece</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="characterUiOrigin">Origin : %s</string>
     <string name="characterUiCrew">Crew : %s</string>

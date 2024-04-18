@@ -65,7 +65,7 @@ class DevilFruitsViewModel @Inject constructor(
     fun changeDevilFruitFavoriteState(devilFruit: DevilFruitUiItem) {
         viewModelScope.launch {
             if (devilFruit.isFavorite) {
-                onePieceRepository.deleteFavoriteDevilFruit(devilFruit.toDevilFruit())
+                onePieceRepository.deleteFavoriteDevilFruit(devilFruit.id)
                 devilFruit.isFavorite = false
             } else {
                 onePieceRepository.addFavoriteDevilFruit(devilFruit.toDevilFruit())

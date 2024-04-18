@@ -57,7 +57,7 @@ class CharacterDetailViewModel @Inject constructor(
     fun changeCharacterFavoriteState(character: Character, isFavorite: Boolean) {
         viewModelScope.launch {
             if (isFavorite) {
-                onePieceRepository.deleteFavoriteCharacter(character)
+                onePieceRepository.deleteFavoriteCharacter(character.id)
             } else {
                 onePieceRepository.addFavoriteCharacter(character)
             }

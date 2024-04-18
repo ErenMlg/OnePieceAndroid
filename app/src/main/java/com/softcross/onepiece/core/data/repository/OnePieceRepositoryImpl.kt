@@ -68,8 +68,8 @@ class OnePieceRepositoryImpl @Inject constructor(
         localDataSource.addFavoriteCharacter(favoriteCharacterEntity.toFavoriteCharacter())
     }
 
-    override suspend fun deleteFavoriteCharacter(favoriteCharacterEntity: Character) {
-        localDataSource.deleteFavoriteCharacter(favoriteCharacterEntity.toFavoriteCharacter())
+    override suspend fun deleteFavoriteCharacter(id: String) {
+        localDataSource.deleteFavoriteCharacter(id)
     }
 
     override suspend fun getAllCrews(): Flow<ResponseState<List<Crew>>> {
@@ -101,8 +101,8 @@ class OnePieceRepositoryImpl @Inject constructor(
         localDataSource.addFavoriteCrew(favoriteCrewEntity.toFavoriteCrew())
     }
 
-    override suspend fun deleteFavoriteCrew(favoriteCrewEntity: Crew) {
-        localDataSource.deleteFavoriteCrew(favoriteCrewEntity.toFavoriteCrew())
+    override suspend fun deleteFavoriteCrew(id: String) {
+        localDataSource.deleteFavoriteCrew(id)
     }
 
 
@@ -129,8 +129,8 @@ class OnePieceRepositoryImpl @Inject constructor(
         localDataSource.addFavoriteDevilFruit(devilFruitEntity.toFavoriteDevilFruit())
     }
 
-    override suspend fun deleteFavoriteDevilFruit(devilFruitEntity: DevilFruit) {
-        localDataSource.deleteFavoriteDevilFruit(devilFruitEntity.toFavoriteDevilFruit())
+    override suspend fun deleteFavoriteDevilFruit(id: String) {
+        localDataSource.deleteFavoriteDevilFruit(id)
     }
 
     override suspend fun getAllOccupations(): Flow<ResponseState<List<Occupations>>> {
@@ -156,8 +156,8 @@ class OnePieceRepositoryImpl @Inject constructor(
         localDataSource.addFavoriteOccupation(favoriteOccupationEntity.toFavoriteOccupation())
     }
 
-    override suspend fun deleteFavoriteOccupation(favoriteOccupationEntity: Occupations) {
-        localDataSource.deleteFavoriteOccupation(favoriteOccupationEntity.toFavoriteOccupation())
+    override suspend fun deleteFavoriteOccupation(id: String) {
+        localDataSource.deleteFavoriteOccupation(id)
     }
 
     override suspend fun getAllLocations(): Flow<ResponseState<List<Location>>> {
@@ -193,8 +193,8 @@ class OnePieceRepositoryImpl @Inject constructor(
         localDataSource.addFavoriteSubLocation(favoriteSubLocationEntity.toFavoriteSubLocation())
     }
 
-    override suspend fun deleteFavoriteSubLocation(favoriteSubLocationEntity: SubLocation) {
-        localDataSource.deleteFavoriteSubLocation(favoriteSubLocationEntity.toFavoriteSubLocation())
+    override suspend fun deleteFavoriteSubLocation(id: String) {
+        localDataSource.deleteFavoriteSubLocation(id)
     }
 
 

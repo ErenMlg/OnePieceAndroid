@@ -58,7 +58,7 @@ class SubLocationsViewModel @Inject constructor(
     fun changeSubLocationFavoriteState(subLocation: SubLocationUiItem) {
         viewModelScope.launch {
             if (subLocation.isFavorite) {
-                onePieceRepository.deleteFavoriteSubLocation(subLocation.toSubLocation())
+                onePieceRepository.deleteFavoriteSubLocation(subLocation.id)
                 subLocation.isFavorite = false
             } else {
                 onePieceRepository.addFavoriteSubLocation(subLocation.toSubLocation())

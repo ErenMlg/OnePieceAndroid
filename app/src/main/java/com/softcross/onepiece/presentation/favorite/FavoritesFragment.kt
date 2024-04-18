@@ -22,7 +22,7 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
     private val binding: FragmentFavoritesBinding by viewBinding(FragmentFavoritesBinding::bind)
     private val adapter = FavoritesAdapter().apply {
         setOnDeleteFavoriteClickListener {
-
+            viewModel.deleteFavoriteItem(it)
         }
     }
 

@@ -55,7 +55,7 @@ class CrewDetailViewModel @Inject constructor(
     fun changeCrewFavoriteState(crew: Crew, isFavorite: Boolean) {
         viewModelScope.launch {
             if (isFavorite) {
-                onePieceRepository.deleteFavoriteCrew(crew)
+                onePieceRepository.deleteFavoriteCrew(crew.id)
             } else {
                 onePieceRepository.addFavoriteCrew(crew)
             }

@@ -45,7 +45,7 @@ class FavoritesAdapter : RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHold
             ivFavorite.loadBitmapWithResize(item.imageURL, 600, 500)
             txtFavoriteName.text = item.name
             ivFavoriteTrash.setOnClickListener {
-
+                onDeleteFavoriteClickListener?.invoke(item)
             }
         }
     }

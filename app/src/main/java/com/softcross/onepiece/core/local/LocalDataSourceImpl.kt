@@ -19,8 +19,8 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
         favoritesDao.addFavoriteCharacter(favoriteCharacterEntity)
     }
 
-    override suspend fun deleteFavoriteCharacter(favoriteCharacterEntity: FavoriteCharacterEntity) {
-        favoritesDao.deleteFavoriteCharacter(favoriteCharacterEntity)
+    override suspend fun deleteFavoriteCharacter(id: String) {
+        favoritesDao.deleteFavoriteCharacter(id)
     }
 
     override fun getAllFavoriteCrews(): Flow<List<FavoriteCrewEntity>> {
@@ -31,8 +31,8 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
         favoritesDao.addFavoriteCrew(favoriteCrewEntity)
     }
 
-    override suspend fun deleteFavoriteCrew(favoriteCrewEntity: FavoriteCrewEntity) {
-        favoritesDao.deleteFavoriteCrew(favoriteCrewEntity)
+    override suspend fun deleteFavoriteCrew(id: String) {
+        favoritesDao.deleteFavoriteCrew(id)
     }
 
     override fun getAllFavoriteDevilFruits(): Flow<List<FavoriteDevilFruitEntity>> {
@@ -47,8 +47,8 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
         favoritesDao.addFavoriteDevilFruit(devilFruitEntity)
     }
 
-    override suspend fun deleteFavoriteDevilFruit(devilFruitEntity: FavoriteDevilFruitEntity) {
-        favoritesDao.deleteFavoriteDevilFruit(devilFruitEntity)
+    override suspend fun deleteFavoriteDevilFruit(id: String) {
+        favoritesDao.deleteFavoriteDevilFruit(id)
     }
 
     override fun getAllFavoriteOccupations(): Flow<List<FavoriteOccupationEntity>> {
@@ -63,8 +63,8 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
         favoritesDao.addFavoriteOccupation(favoriteOccupationEntity)
     }
 
-    override suspend fun deleteFavoriteOccupation(favoriteOccupationEntity: FavoriteOccupationEntity) {
-        favoritesDao.deleteFavoriteOccupation(favoriteOccupationEntity)
+    override suspend fun deleteFavoriteOccupation(id: String) {
+        favoritesDao.deleteFavoriteOccupation(id)
     }
 
     override fun getAllFavoriteSubLocations(): Flow<List<FavoriteSubLocationEntity>> {
@@ -79,7 +79,7 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
         favoritesDao.addFavoriteSubLocation(favoriteSubLocationEntity)
     }
 
-    override suspend fun deleteFavoriteSubLocation(favoriteSubLocationEntity: FavoriteSubLocationEntity) {
-        favoritesDao.deleteFavoriteSubLocation(favoriteSubLocationEntity)
+    override suspend fun deleteFavoriteSubLocation(id:String) {
+        favoritesDao.deleteFavoriteSubLocation(id)
     }
 }

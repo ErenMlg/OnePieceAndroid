@@ -80,14 +80,36 @@ class FavoritesViewModel @Inject constructor(
                 if (favoriteList.isNotEmpty()) {
                     _favoritesScreenUiState.postValue(FavoritesUiState.Success(favoriteList))
                 } else {
-                    _favoritesScreenUiState.postValue(FavoritesUiState.Error("Can not find favorite item!"))
+                    _favoritesScreenUiState.postValue(FavoritesUiState.Error("Favorites not found!"))
                 }
             }.collect()
         }
     }
 
     fun deleteFavoriteItem(favoritesUiItem: FavoritesUiItem) {
+        viewModelScope.launch {
+            when (favoritesUiItem.type) {
+                "Character" -> {
+                    onePieceRepository.deleteFavoriteCharacter(favoritesUiItem.id)
+                }
 
+                "Crew" -> {
+                    onePieceRepository.deleteFavoriteCrew(favoritesUiItem.id)
+                }
+
+                "DevilFruit" -> {
+                    onePieceRepository.deleteFavoriteDevilFruit(favoritesUiItem.id)
+                }
+
+                "Occupations" -> {
+                    onePieceRepository.deleteFavoriteOccupation(favoritesUiItem.id)
+                }
+
+                "SubLocations" -> {
+                    onePieceRepository.deleteFavoriteSubLocation(favoritesUiItem.id)
+                }
+            }
+        }
     }
 
 }

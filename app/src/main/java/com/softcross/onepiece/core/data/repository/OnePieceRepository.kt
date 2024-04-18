@@ -23,21 +23,21 @@ interface OnePieceRepository {
     suspend fun getSingleCharacter(id: String): Flow<ResponseState<Character>>
     fun getAllFavoriteCharacters(): Flow<List<Character>>
     suspend fun addFavoriteCharacter(favoriteCharacterEntity: Character)
-    suspend fun deleteFavoriteCharacter(favoriteCharacterEntity: Character)
+    suspend fun deleteFavoriteCharacter(id:String)
 
     //Crews
     suspend fun getAllCrews(): Flow<ResponseState<List<Crew>>>
     suspend fun getSingleCrew(id: String): Flow<ResponseState<Crew>>
     fun getAllFavoriteCrews(): Flow<List<Crew>>
     suspend fun addFavoriteCrew(favoriteCrewEntity: Crew)
-    suspend fun deleteFavoriteCrew(favoriteCrewEntity: Crew)
+    suspend fun deleteFavoriteCrew(id:String)
 
     //Devil Fruit
     suspend fun getAllDevilFruits(): Flow<ResponseState<List<DevilFruit>>>
     suspend fun isFavoriteDevilFruit(devilFruitID: String): Boolean
     fun getAllFavoriteDevilFruits(): Flow<List<DevilFruit>>
     suspend fun addFavoriteDevilFruit(devilFruitEntity: DevilFruit)
-    suspend fun deleteFavoriteDevilFruit(devilFruitEntity: DevilFruit)
+    suspend fun deleteFavoriteDevilFruit(id:String)
 
     //Location
     suspend fun getAllLocations(): Flow<ResponseState<List<Location>>>
@@ -47,13 +47,13 @@ interface OnePieceRepository {
     suspend fun isFavoriteSubLocation(subLocationID: String): Boolean
     fun getAllFavoriteSubLocations(): Flow<List<SubLocation>>
     suspend fun addFavoriteSubLocation(favoriteSubLocationEntity: SubLocation)
-    suspend fun deleteFavoriteSubLocation(favoriteSubLocationEntity: SubLocation)
+    suspend fun deleteFavoriteSubLocation(id:String)
 
     //Occupation
     suspend fun getAllOccupations(): Flow<ResponseState<List<Occupations>>>
     fun getAllFavoriteOccupations(): Flow<List<Occupations>>
     suspend fun isFavoriteOccupation(occupationID: String): Boolean
     suspend fun addFavoriteOccupation(favoriteOccupationEntity: Occupations)
-    suspend fun deleteFavoriteOccupation(favoriteOccupationEntity: Occupations)
+    suspend fun deleteFavoriteOccupation(id:String)
 
 }

@@ -135,73 +135,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a341f1b-ef2e-47f5-96f7-49e2f7fab6b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_heart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_trash.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorites.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_favorites_adapter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/one_piece_fav_database.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/one_piece_fav_database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/CharacterMapExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/CharacterMapExtension.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/CrewMapExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/CrewMapExtension.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/DevilFruitMapExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/DevilFruitMapExtension.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/LocationMapExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/LocationMapExtension.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/OccupationMapExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/extension/mapExtensions/OccupationMapExtension.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/mapper/OnePieceMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/mapper/OnePieceResponseItemMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/common/mapper/OnePieceResponseListMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/di/MapperModule.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CharacterItemMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CharacterListMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CrewItemMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/CrewListMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/DevilFruitListMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/LocationListMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/OccupationListMapper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/mapper/SubLocationListMapper.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/data/repository/OnePieceRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/domain/GetAllDevilFruitsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/domain/GetAllDevilFruitsUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/FavoritesDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/FavoritesDao.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/LocalDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/LocalDataSource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/LocalDataSourceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/LocalDataSourceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/di/SourceModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/di/SourceModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteCharacterEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteCharacterEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteCrewEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteCrewEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteDevilFruitEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteDevilFruitEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteLocationEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteLocationEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteOccupationEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteOccupationEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteSubLocationEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/core/local/entity/FavoriteSubLocationEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/CharactersFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/CharactersFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/characterDetail/CharacterDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/characterDetail/CharacterDetailFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/characterDetail/CharacterDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/characters/characterDetail/CharacterDetailViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/CrewsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/crewDetail/CrewDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/crewDetail/CrewDetailFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/crewDetail/CrewDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/crews/crewDetail/CrewDetailViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/devilFruits/DevilFruitsViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/LocationsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/LocationsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/favorite/FavoritesViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/locations/subLocations/SubLocationsViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/softcross/onepiece/presentation/occupations/OccupationsViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_characters.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_characters.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_crews.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_crews.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_devil_fruits.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_devil_fruits.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_locations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_locations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_occupations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_occupations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sub_locations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sub_locations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_devil_fruits_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_devil_fruits_adapter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_occupations_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_occupations_adapter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_sub_locations_adapter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_sub_locations_adapter.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,6 +260,7 @@
   },
   "keyToStringList": {
     "com.android.tools.idea.sqlite.queryhistory": [
+      "DELETE FROM FavoriteCharacters WHERE id=\"656dd673fa1ed2c361c385a3\"",
       "SELECT * FROM FavoriteCharacters",
       "SELECT * FROM FavoriteCharacters,FavoriteCrews,FavoriteDevilFruits,FavoriteLocations,FavoriteOccupations,FavoriteSubLocations"
     ]

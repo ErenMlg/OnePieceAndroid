@@ -60,7 +60,7 @@ class OccupationsViewModel @Inject constructor(
     fun changeOccupationFavoriteState(occupations: OccupationUiItem) {
         viewModelScope.launch {
             if (occupations.isFavorite) {
-                onePieceRepository.deleteFavoriteOccupation(occupations.toOccupation())
+                onePieceRepository.deleteFavoriteOccupation(occupations.id)
                 occupations.isFavorite = false
             } else {
                 onePieceRepository.addFavoriteOccupation(occupations.toOccupation())
