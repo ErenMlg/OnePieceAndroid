@@ -363,11 +363,14 @@ Core layer have 5 sub layer as common, data, domain, local, network;
       </ul>
     </td>
   </tr>
-</table>
-
-<img src="https://github.com/ErenMlg/OnePieceAndroid/assets/94524411/87653437-2e09-40da-8588-7e6d4ee6a897">
-Presentation layer have 7 sub layer as character, components, crews, devilfruits, favorite, location, occupation.
+ <tr>
+  <img src="https://github.com/ErenMlg/OnePieceAndroid/assets/94524411/87653437-2e09-40da-8588-7e6d4ee6a897">
+ </tr>
+ <td>
+  Presentation layer have 7 sub layer as character, components, crews, devilfruits, favorite, location, occupation.
 They hold own fragments, viewmodels, adapters and detail pages.
+ </td>
+</table>
 
 ## End Note
 I may have mistakes, you can contact me for your feedback. 👉 📫 **eren.mollaoglu@outlook.com**<br>
