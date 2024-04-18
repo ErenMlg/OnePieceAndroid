@@ -37,6 +37,9 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeUI()
+        binding.fabToFav.setOnClickListener{
+            findNavController().navigate(R.id.characters_to_favorite)
+        }
     }
 
     private fun observeUI() {

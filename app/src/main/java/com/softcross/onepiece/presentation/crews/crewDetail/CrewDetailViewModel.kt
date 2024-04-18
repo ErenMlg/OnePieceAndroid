@@ -6,14 +6,18 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.softcross.onepiece.core.data.ResponseState
 import com.softcross.onepiece.core.data.modal.Crew
+import com.softcross.onepiece.core.data.repository.OnePieceRepository
 import com.softcross.onepiece.core.domain.GetSingleCrewUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class CrewDetailViewModel @Inject constructor(
-    private val getSingleCrewUseCase: GetSingleCrewUseCase
+    private val getSingleCrewUseCase: GetSingleCrewUseCase,
+    private val onePieceRepository: OnePieceRepository
 ) : ViewModel() {
 
     private val _crewDetailUiState = MutableLiveData<CrewDetailUiState>()
@@ -21,7 +25,10 @@ class CrewDetailViewModel @Inject constructor(
 
     fun getSingleCrew(id: String) {
         viewModelScope.launch {
-            getSingleCrewUseCase(id).collect { responseState ->
+            combine(
+                getSingleCrewUseCase(id),
+                onePieceRepository.getAllFavoriteCrews()
+            ) { responseState, favoriteCrews ->
                 when (responseState) {
                     is ResponseState.Loading -> {
                         _crewDetailUiState.postValue(CrewDetailUiState.Loading)
@@ -32,9 +39,25 @@ class CrewDetailViewModel @Inject constructor(
                     }
 
                     is ResponseState.Success -> {
-                        _crewDetailUiState.postValue(CrewDetailUiState.Success(responseState.data))
+                        val isFavorite = favoriteCrews.any { it.id == responseState.data.id }
+                        _crewDetailUiState.postValue(
+                            CrewDetailUiState.Success(
+                                responseState.data,
+                                isFavorite
+                            )
+                        )
                     }
                 }
+            }.collect()
+        }
+    }
+
+    fun changeCrewFavoriteState(crew: Crew, isFavorite: Boolean) {
+        viewModelScope.launch {
+            if (isFavorite) {
+                onePieceRepository.deleteFavoriteCrew(crew)
+            } else {
+                onePieceRepository.addFavoriteCrew(crew)
             }
         }
     }
@@ -42,15 +65,6 @@ class CrewDetailViewModel @Inject constructor(
 
 sealed class CrewDetailUiState {
     object Loading : CrewDetailUiState()
-    data class Error(val errorMessage: String = "") : CrewDetailUiState()
-    data class Success(val data: Crew) : CrewDetailUiState()
+    data class Error(val errorMessage: String) : CrewDetailUiState()
+    data class Success(val data: Crew, val isFavorite: Boolean) : CrewDetailUiState()
 }
-
-data class CrewDetailUiItem(
-    val id: String,
-    val crewName: String,
-    val crewTotalBounty: String,
-    val crewMainShip: String,
-    val crewFlagURL: String
-
-)

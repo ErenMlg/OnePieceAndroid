@@ -13,6 +13,9 @@
         <action
             android:id="@+id/character_to_detail"
             app:destination="@id/characterDetailFragment" />
+        <action
+            android:id="@+id/characters_to_favorite"
+            app:destination="@id/favoritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/characterDetailFragment"
@@ -36,6 +39,9 @@
         <action
             android:id="@+id/crew_to_detail"
             app:destination="@id/crewDetailFragment" />
+        <action
+            android:id="@+id/crews_to_favorites"
+            app:destination="@id/favoritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/crewDetailFragment"
@@ -55,12 +61,20 @@
         android:id="@+id/devilFruitsFragment"
         android:name="com.softcross.onepiece.presentation.devilFruits.DevilFruitsFragment"
         android:label="fragment_devil_fruits"
-        tools:layout="@layout/fragment_devil_fruits" />
+        tools:layout="@layout/fragment_devil_fruits" >
+        <action
+            android:id="@+id/devilFruit_to_favorites"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/occupationsFragment"
         android:name="com.softcross.onepiece.presentation.occupations.OccupationsFragment"
         android:label="fragment_occupations"
-        tools:layout="@layout/fragment_occupations" />
+        tools:layout="@layout/fragment_occupations" >
+        <action
+            android:id="@+id/occupations_to_favorites"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/locationsFragment"
         android:name="com.softcross.onepiece.presentation.locations.LocationsFragment"
@@ -69,6 +83,9 @@
         <action
             android:id="@+id/locations_to_sub_location"
             app:destination="@id/subLocationsFragment" />
+        <action
+            android:id="@+id/locations_to_favorites"
+            app:destination="@id/favoritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/subLocationsFragment"
@@ -84,5 +101,14 @@
         <argument
             android:name="locationName"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.softcross.onepiece.presentation.favorite.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/favorites_to_characters"
+            app:destination="@id/charactersFragment" />
     </fragment>
 </navigation>

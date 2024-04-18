@@ -3,6 +3,7 @@ package com.softcross.onepiece.core.common.extension.mapExtensions
 import com.softcross.onepiece.core.data.modal.DevilFruit
 import com.softcross.onepiece.core.local.entity.FavoriteDevilFruitEntity
 import com.softcross.onepiece.core.network.dto.devilFruit.DevilFruitResponse
+import com.softcross.onepiece.presentation.devilFruits.DevilFruitUiItem
 import retrofit2.Response
 
 fun Response<DevilFruitResponse>.toDevilFruitList(): List<DevilFruit> {
@@ -27,9 +28,15 @@ fun FavoriteDevilFruitEntity.toDevilFruit(): DevilFruit {
 
 fun DevilFruit.toFavoriteDevilFruit(): FavoriteDevilFruitEntity {
     return FavoriteDevilFruitEntity(
-        id = id.toInt(),
+        id = id,
         name = devilFruitName,
         type = devilFruitType,
         imageURL = devilFruitPictureURL
+    )
+}
+
+fun DevilFruitUiItem.toDevilFruit(): DevilFruit {
+    return DevilFruit(
+        id, devilFruitName, devilFruitType, devilFruitPictureURL
     )
 }

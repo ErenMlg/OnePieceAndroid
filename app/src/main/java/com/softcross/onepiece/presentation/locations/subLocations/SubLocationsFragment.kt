@@ -11,7 +11,6 @@ import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.core.common.extension.gone
 import com.softcross.onepiece.core.common.extension.visible
-import com.softcross.onepiece.core.data.modal.SubLocation
 import com.softcross.onepiece.databinding.FragmentSubLocationsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +20,11 @@ class SubLocationsFragment : Fragment(R.layout.fragment_sub_locations) {
     private val viewModel: SubLocationsViewModel by viewModels()
     private val binding: FragmentSubLocationsBinding by viewBinding(FragmentSubLocationsBinding::bind)
     private val args: SubLocationsFragmentArgs by navArgs()
-    private val adapter = SubLocationAdapter()
+    private val adapter = SubLocationAdapter().apply {
+        setOnFavoriteClickListener {
+            viewModel.changeSubLocationFavoriteState(it)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +57,7 @@ class SubLocationsFragment : Fragment(R.layout.fragment_sub_locations) {
         }
     }
 
-    private fun handleSuccess(subLocationList: List<SubLocation>) {
+    private fun handleSuccess(subLocationList: List<SubLocationUiItem>) {
         adapter.updateItems(subLocationList)
         binding.viewToolbarSubLocation.setTitle(args.locationName)
         binding.viewToolbarSubLocation.backClickListener { findNavController().navigate(R.id.sub_location_to_location) }

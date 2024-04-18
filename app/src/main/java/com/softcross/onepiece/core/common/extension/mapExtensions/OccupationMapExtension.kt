@@ -3,6 +3,7 @@ package com.softcross.onepiece.core.common.extension.mapExtensions
 import com.softcross.onepiece.core.data.modal.Occupations
 import com.softcross.onepiece.core.local.entity.FavoriteOccupationEntity
 import com.softcross.onepiece.core.network.dto.occupation.OccupationResponse
+import com.softcross.onepiece.presentation.occupations.OccupationUiItem
 import retrofit2.Response
 import java.lang.Exception
 
@@ -19,7 +20,7 @@ fun Response<OccupationResponse>.toOccupationList(): List<Occupations> {
 
 fun FavoriteOccupationEntity.toOccupation(): Occupations {
     return Occupations(
-        id = id.toString(),
+        id = id,
         occupationName = name,
         occupationDesc = desc,
         occupationPictureURL = imageURL
@@ -28,9 +29,15 @@ fun FavoriteOccupationEntity.toOccupation(): Occupations {
 
 fun Occupations.toFavoriteOccupation(): FavoriteOccupationEntity {
     return FavoriteOccupationEntity(
-        id = id.toInt(),
+        id = id,
         name = occupationName,
         desc = occupationDesc,
         imageURL = occupationPictureURL
+    )
+}
+
+fun OccupationUiItem.toOccupation(): Occupations {
+    return Occupations(
+        id, occupationName, occupationDesc, occupationPictureURL
     )
 }

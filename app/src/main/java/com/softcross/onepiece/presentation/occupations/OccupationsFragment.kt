@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.core.common.extension.gone
@@ -18,7 +19,11 @@ class OccupationsFragment : Fragment(R.layout.fragment_occupations) {
 
     private val viewModel: OccupationsViewModel by viewModels()
     private val binding: FragmentOccupationsBinding by viewBinding(FragmentOccupationsBinding::bind)
-    private val adapter = OccupationsAdapter()
+    private val adapter = OccupationsAdapter().apply {
+        setOnFavoriteClickListener {
+            viewModel.changeOccupationFavoriteState(it)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +33,9 @@ class OccupationsFragment : Fragment(R.layout.fragment_occupations) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeUi()
+        binding.fabToFav.setOnClickListener {
+            findNavController().navigate(R.id.occupations_to_favorites)
+        }
     }
 
     private fun observeUi() {
@@ -40,8 +48,8 @@ class OccupationsFragment : Fragment(R.layout.fragment_occupations) {
         }
     }
 
-    private fun handleSuccess(devilFruitList: List<Occupations>) {
-        adapter.updateItems(devilFruitList)
+    private fun handleSuccess(occupationList: List<OccupationUiItem>) {
+        adapter.updateItems(occupationList)
         binding.rvOccupations.adapter = adapter
         contentVisible(true)
     }

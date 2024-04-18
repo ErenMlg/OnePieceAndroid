@@ -4,35 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".presentation.locations.subLocations.SubLocationsFragment">
+    tools:context=".presentation.favorite.FavoritesFragment">
 
     <com.softcross.onepiece.presentation.components.ToolbarView
-        android:id="@+id/viewToolbarSubLocation"
+        android:id="@+id/viewToolbarFavorites"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:detail_title="Favorites" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSubLocations"
+        android:id="@+id/rvFavorites"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/viewToolbarSubLocation"
         android:clipToPadding="false"
         android:paddingStart="0dp"
         android:paddingEnd="8dp"
         android:paddingBottom="8dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/viewToolbarFavorites"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-    <com.softcross.onepiece.presentation.components.ErrorView
-        android:id="@+id/viewErrorSubLocations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:visibility="invisible" />
-
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/viewLoadingSubLocations"
+        android:id="@+id/viewLoadingFavorites"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerInParent="true"
@@ -40,5 +32,12 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loading" />
+
+    <com.softcross.onepiece.presentation.components.ErrorView
+        android:id="@+id/viewErrorLayoutFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
 
 </RelativeLayout>

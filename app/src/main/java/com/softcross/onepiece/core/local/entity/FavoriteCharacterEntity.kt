@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "FavoriteCharacters")
 data class FavoriteCharacterEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @PrimaryKey
+    val id: String,
     val name: String,
     val status: String,
     val bounty: String,

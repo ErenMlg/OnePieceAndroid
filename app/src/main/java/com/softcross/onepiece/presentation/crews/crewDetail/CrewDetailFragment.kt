@@ -45,18 +45,20 @@ class CrewDetailFragment : Fragment(R.layout.fragment_crew_detail) {
                 }
 
                 is CrewDetailUiState.Success -> {
-                    handleSuccess(crewDetailUiState.data)
+                    handleSuccess(crewDetailUiState.data, crewDetailUiState.isFavorite)
                 }
             }
         }
     }
 
-    private fun handleSuccess(crew: Crew) {
+    private fun handleSuccess(crew: Crew, isFavorite: Boolean) {
         with(binding) {
             crewFlagDetailBox.loadOnBitmap(crew.crewFlagURL)
             viewInfoShip.setInfo(crew.crewMainShip)
             viewInfoBounty.setInfo(crew.crewTotalBounty)
             viewCrewDetailToolbar.setTitle(crew.crewName)
+            ivCrewFav.setImageResource(if (isFavorite) R.drawable.ic_remove_favorite else R.drawable.ic_add_favorite)
+            ivCrewFav.setOnClickListener { viewModel.changeCrewFavoriteState(crew, isFavorite) }
             viewCrewDetailToolbar.backClickListener {
                 findNavController().navigate(R.id.detail_to_all_crews)
             }

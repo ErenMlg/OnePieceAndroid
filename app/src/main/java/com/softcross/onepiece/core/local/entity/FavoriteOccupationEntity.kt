@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "FavoriteOccupations")
 data class FavoriteOccupationEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @PrimaryKey
+    val id: String,
     val name: String,
     val desc: String,
     val imageURL: String

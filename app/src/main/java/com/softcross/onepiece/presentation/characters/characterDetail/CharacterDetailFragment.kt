@@ -45,13 +45,13 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
                 }
 
                 is CharacterDetailUiState.Success -> {
-                    handleSuccess(characterDetailUiState.data)
+                    handleSuccess(characterDetailUiState.data, characterDetailUiState.isFavorite)
                 }
             }
         }
     }
 
-    private fun handleSuccess(character: Character) {
+    private fun handleSuccess(character: Character, isFavorite: Boolean) {
         binding.apply {
             viewCharacterDetailPicture.loadOnBitmap(character.characterPictureURL)
             onePieceUiToolbarComponent.setTitle(character.characterName)
@@ -63,6 +63,10 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
             viewInfoAbilities.setInfo(character.characterAbilities)
             viewInfoDiamond.setInfo(character.characterBounty)
             onePieceUiToolbarComponent.backClickListener { findNavController().navigate(R.id.detail_to_all_characters) }
+            ivFav.setImageResource(if (isFavorite) R.drawable.ic_remove_favorite else R.drawable.ic_add_favorite)
+            ivFav.setOnClickListener {
+                viewModel.changeCharacterFavoriteState(character, isFavorite)
+            }
         }
         contentVisible(true)
     }

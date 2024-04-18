@@ -58,7 +58,7 @@ fun FavoriteCharacterEntity.toCharacter(): Character {
 
 fun Character.toFavoriteCharacter(): FavoriteCharacterEntity {
     return FavoriteCharacterEntity(
-        id = id.toInt(),
+        id = id,
         name = characterName,
         status = characterStatus,
         bounty = characterBounty,

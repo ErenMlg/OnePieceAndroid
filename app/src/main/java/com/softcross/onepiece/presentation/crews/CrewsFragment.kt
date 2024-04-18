@@ -36,6 +36,9 @@ class CrewsFragment : Fragment(R.layout.fragment_crews) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeUI()
+        binding.fabToFav.setOnClickListener{
+            findNavController().navigate(R.id.crews_to_favorites)
+        }
     }
 
     private fun observeUI() {

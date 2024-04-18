@@ -39,6 +39,10 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
         return favoritesDao.getAllFavoriteDevilFruits()
     }
 
+    override suspend fun isFavoriteDevilFruit(devilFruitID: String): Boolean {
+        return favoritesDao.isFavoriteDevilFruit(devilFruitID)
+    }
+
     override suspend fun addFavoriteDevilFruit(devilFruitEntity: FavoriteDevilFruitEntity) {
         favoritesDao.addFavoriteDevilFruit(devilFruitEntity)
     }
@@ -47,20 +51,12 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
         favoritesDao.deleteFavoriteDevilFruit(devilFruitEntity)
     }
 
-    override fun getAllFavoriteLocations(): Flow<List<FavoriteLocationEntity>> {
-        return favoritesDao.getAllFavoriteLocations()
-    }
-
-    override suspend fun addFavoriteLocation(favoriteLocationEntity: FavoriteLocationEntity) {
-        favoritesDao.addFavoriteLocation(favoriteLocationEntity)
-    }
-
-    override suspend fun deleteFavoriteLocation(favoriteLocationEntity: FavoriteLocationEntity) {
-        favoritesDao.deleteFavoriteLocation(favoriteLocationEntity)
-    }
-
     override fun getAllFavoriteOccupations(): Flow<List<FavoriteOccupationEntity>> {
         return favoritesDao.getAllFavoriteOccupations()
+    }
+
+    override suspend fun isFavoriteOccupation(occupationID: String): Boolean {
+        return favoritesDao.isFavoriteOccupation(occupationID)
     }
 
     override suspend fun addFavoriteOccupation(favoriteOccupationEntity: FavoriteOccupationEntity) {
@@ -73,6 +69,10 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
 
     override fun getAllFavoriteSubLocations(): Flow<List<FavoriteSubLocationEntity>> {
         return favoritesDao.getAllFavoriteSubLocations()
+    }
+
+    override suspend fun isFavoriteSubLocation(subLocationID: String): Boolean {
+        return favoritesDao.isFavoriteSubLocation(subLocationID)
     }
 
     override suspend fun addFavoriteSubLocation(favoriteSubLocationEntity: FavoriteSubLocationEntity) {

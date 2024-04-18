@@ -22,21 +22,20 @@ interface LocalDataSource {
 
     //Devil Fruit
     fun getAllFavoriteDevilFruits(): Flow<List<FavoriteDevilFruitEntity>>
+    suspend fun isFavoriteDevilFruit(devilFruitID:String): Boolean
     suspend fun addFavoriteDevilFruit(devilFruitEntity: FavoriteDevilFruitEntity)
     suspend fun deleteFavoriteDevilFruit(devilFruitEntity: FavoriteDevilFruitEntity)
 
-    //Location
-    fun getAllFavoriteLocations(): Flow<List<FavoriteLocationEntity>>
-    suspend fun addFavoriteLocation(favoriteLocationEntity: FavoriteLocationEntity)
-    suspend fun deleteFavoriteLocation(favoriteLocationEntity: FavoriteLocationEntity)
-
     //Occupation
     fun getAllFavoriteOccupations(): Flow<List<FavoriteOccupationEntity>>
+    suspend fun isFavoriteOccupation(occupationID:String): Boolean
     suspend fun addFavoriteOccupation(favoriteOccupationEntity: FavoriteOccupationEntity)
     suspend fun deleteFavoriteOccupation(favoriteOccupationEntity: FavoriteOccupationEntity)
 
     //Sub Location
     fun getAllFavoriteSubLocations(): Flow<List<FavoriteSubLocationEntity>>
+    suspend fun isFavoriteSubLocation(subLocationID:String): Boolean
+
     suspend fun addFavoriteSubLocation(favoriteSubLocationEntity: FavoriteSubLocationEntity)
     suspend fun deleteFavoriteSubLocation(favoriteSubLocationEntity: FavoriteSubLocationEntity)
 }

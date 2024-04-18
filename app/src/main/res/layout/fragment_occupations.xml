@@ -34,5 +34,18 @@
         android:paddingBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabToFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:rippleColor="@null"
+        android:clickable="true"
+        android:contentDescription="go to the favorites"
+        android:focusable="true"
+        app:backgroundTint="@color/secondaryColor"
+        app:srcCompat="@drawable/ic_heart"
+        app:tint="@color/subColor" />
 
 </FrameLayout>

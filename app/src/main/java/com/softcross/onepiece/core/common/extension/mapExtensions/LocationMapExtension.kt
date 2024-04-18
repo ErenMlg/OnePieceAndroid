@@ -6,6 +6,7 @@ import com.softcross.onepiece.core.local.entity.FavoriteLocationEntity
 import com.softcross.onepiece.core.local.entity.FavoriteSubLocationEntity
 import com.softcross.onepiece.core.network.dto.location.LocationResponse
 import com.softcross.onepiece.core.network.dto.location.sublocation.SubLocationResponse
+import com.softcross.onepiece.presentation.locations.subLocations.SubLocationUiItem
 import retrofit2.Response
 
 fun Response<LocationResponse>.toLocationList(): List<Location> {
@@ -24,7 +25,7 @@ fun FavoriteLocationEntity.toLocation(): Location {
 
 fun Location.toFavoriteLocation(): FavoriteLocationEntity {
     return FavoriteLocationEntity(
-        id = id.toInt(),
+        id = id,
         name = locationName,
         imageURL = locationPictureURL
     )
@@ -54,10 +55,14 @@ fun FavoriteSubLocationEntity.toSubLocation(): SubLocation {
 
 fun SubLocation.toFavoriteSubLocation(): FavoriteSubLocationEntity {
     return FavoriteSubLocationEntity(
-        id = id.toInt(),
+        id = id,
         name = subLocationName,
         imageURL = subLocationPictureURL,
         firstApperance = firstAppearance,
         locationName = locationName
     )
+}
+
+fun SubLocationUiItem.toSubLocation(): SubLocation {
+    return SubLocation(id, subLocationName, subLocationPictureURL, firstAppearance, locationName)
 }

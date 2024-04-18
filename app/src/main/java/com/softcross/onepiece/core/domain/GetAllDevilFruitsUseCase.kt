@@ -3,6 +3,7 @@ package com.softcross.onepiece.core.domain
 import com.softcross.onepiece.core.data.ResponseState
 import com.softcross.onepiece.core.data.modal.DevilFruit
 import com.softcross.onepiece.core.data.repository.OnePieceRepository
+import com.softcross.onepiece.presentation.devilFruits.DevilFruitUiItem
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

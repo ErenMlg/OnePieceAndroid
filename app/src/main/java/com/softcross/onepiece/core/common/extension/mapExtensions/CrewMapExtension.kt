@@ -42,7 +42,7 @@ fun FavoriteCrewEntity.toCrew(): Crew {
 
 fun Crew.toFavoriteCrew(): FavoriteCrewEntity {
     return FavoriteCrewEntity(
-        id = id.toInt(),
+        id = id,
         name = crewName,
         totalBounty = crewTotalBounty,
         mainShip = crewMainShip,

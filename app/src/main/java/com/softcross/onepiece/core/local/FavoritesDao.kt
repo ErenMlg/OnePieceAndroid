@@ -35,23 +35,20 @@ interface FavoritesDao {
     @Query("SELECT * FROM FavoriteDevilFruits ORDER BY id ASC")
     fun getAllFavoriteDevilFruits(): Flow<List<FavoriteDevilFruitEntity>>
 
+    @Query("SELECT EXISTS(SELECT * FROM FavoriteDevilFruits WHERE id = :devilFruitID)")
+    suspend fun isFavoriteDevilFruit(devilFruitID:String): Boolean
+
     @Insert
     suspend fun addFavoriteDevilFruit(devilFruitEntity: FavoriteDevilFruitEntity)
 
     @Delete
     suspend fun deleteFavoriteDevilFruit(devilFruitEntity: FavoriteDevilFruitEntity)
 
-    @Query("SELECT * FROM FavoriteLocations ORDER BY id ASC")
-    fun getAllFavoriteLocations(): Flow<List<FavoriteLocationEntity>>
-
-    @Insert
-    suspend fun addFavoriteLocation(favoriteLocationEntity: FavoriteLocationEntity)
-
-    @Delete
-    suspend fun deleteFavoriteLocation(favoriteLocationEntity: FavoriteLocationEntity)
-
     @Query("SELECT * FROM FavoriteOccupations ORDER BY id ASC")
     fun getAllFavoriteOccupations(): Flow<List<FavoriteOccupationEntity>>
+
+    @Query("SELECT EXISTS(SELECT * FROM FavoriteOccupations WHERE id = :occupationID)")
+    suspend fun isFavoriteOccupation(occupationID:String): Boolean
 
     @Insert
     suspend fun addFavoriteOccupation(favoriteOccupationEntity: FavoriteOccupationEntity)
@@ -61,6 +58,8 @@ interface FavoritesDao {
 
     @Query("SELECT * FROM FavoriteSubLocations ORDER BY id ASC")
     fun getAllFavoriteSubLocations(): Flow<List<FavoriteSubLocationEntity>>
+    @Query("SELECT EXISTS(SELECT * FROM FavoriteSubLocations WHERE id = :subLocationID)")
+    suspend fun isFavoriteSubLocation(subLocationID:String): Boolean
 
     @Insert
     suspend fun addFavoriteSubLocation(favoriteSubLocationEntity: FavoriteSubLocationEntity)

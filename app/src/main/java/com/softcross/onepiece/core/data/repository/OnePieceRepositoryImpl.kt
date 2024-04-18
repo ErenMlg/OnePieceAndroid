@@ -1,5 +1,23 @@
 package com.softcross.onepiece.core.data.repository
 
+import com.softcross.onepiece.core.common.extension.mapExtensions.toCharacter
+import com.softcross.onepiece.core.common.extension.mapExtensions.toCharacterList
+import com.softcross.onepiece.core.common.extension.mapExtensions.toCrew
+import com.softcross.onepiece.core.common.extension.mapExtensions.toCrewList
+import com.softcross.onepiece.core.common.extension.mapExtensions.toDevilFruit
+import com.softcross.onepiece.core.common.extension.mapExtensions.toDevilFruitList
+import com.softcross.onepiece.core.common.extension.mapExtensions.toFavoriteCharacter
+import com.softcross.onepiece.core.common.extension.mapExtensions.toFavoriteCrew
+import com.softcross.onepiece.core.common.extension.mapExtensions.toFavoriteDevilFruit
+import com.softcross.onepiece.core.common.extension.mapExtensions.toFavoriteLocation
+import com.softcross.onepiece.core.common.extension.mapExtensions.toFavoriteOccupation
+import com.softcross.onepiece.core.common.extension.mapExtensions.toFavoriteSubLocation
+import com.softcross.onepiece.core.common.extension.mapExtensions.toLocation
+import com.softcross.onepiece.core.common.extension.mapExtensions.toLocationList
+import com.softcross.onepiece.core.common.extension.mapExtensions.toOccupation
+import com.softcross.onepiece.core.common.extension.mapExtensions.toOccupationList
+import com.softcross.onepiece.core.common.extension.mapExtensions.toSubLocation
+import com.softcross.onepiece.core.common.extension.mapExtensions.toSubLocationList
 import com.softcross.onepiece.core.data.ResponseState
 import com.softcross.onepiece.core.data.modal.Character
 import com.softcross.onepiece.core.data.modal.Crew
@@ -7,16 +25,10 @@ import com.softcross.onepiece.core.data.modal.DevilFruit
 import com.softcross.onepiece.core.data.modal.Location
 import com.softcross.onepiece.core.data.modal.Occupations
 import com.softcross.onepiece.core.data.modal.SubLocation
-import com.softcross.onepiece.core.data.mapper.CharacterItemMapper
-import com.softcross.onepiece.core.data.mapper.CharacterListMapper
-import com.softcross.onepiece.core.data.mapper.CrewItemMapper
-import com.softcross.onepiece.core.data.mapper.CrewListMapper
-import com.softcross.onepiece.core.data.mapper.DevilFruitListMapper
-import com.softcross.onepiece.core.data.mapper.LocationListMapper
-import com.softcross.onepiece.core.data.mapper.OccupationListMapper
-import com.softcross.onepiece.core.data.mapper.SubLocationListMapper
 import com.softcross.onepiece.core.local.LocalDataSource
+import com.softcross.onepiece.core.local.entity.FavoriteDevilFruitEntity
 import com.softcross.onepiece.core.network.source.rest.RestDataSource
+import com.softcross.onepiece.presentation.devilFruits.DevilFruitUiItem
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
@@ -25,21 +37,13 @@ import javax.inject.Inject
 
 class OnePieceRepositoryImpl @Inject constructor(
     private val restDataSource: RestDataSource,
-    private val localDataSource: LocalDataSource,
-    private val characterListMapper: CharacterListMapper,
-    private val characterItemMapper: CharacterItemMapper,
-    private val crewListMapper: CrewListMapper,
-    private val crewItemMapper: CrewItemMapper,
-    private val devilFruitListMapper: DevilFruitListMapper,
-    private val occupationListMapper: OccupationListMapper,
-    private val locationListMapper: LocationListMapper,
-    private val subLocationListMapper: SubLocationListMapper
+    private val localDataSource: LocalDataSource
 ) : OnePieceRepository {
     override suspend fun getAllCharacters(): Flow<ResponseState<List<Character>>> {
         return flow {
             emit(ResponseState.Loading)
             val response = restDataSource.getAllCharacters()
-            emit(ResponseState.Success(characterListMapper.map(response)))
+            emit(ResponseState.Success(response.toCharacterList()))
         }.catch {
             emit(ResponseState.Error(it.message.orEmpty()))
         }
@@ -49,44 +53,30 @@ class OnePieceRepositoryImpl @Inject constructor(
         return flow {
             emit(ResponseState.Loading)
             val response = restDataSource.getSingleCharacter(id)
-            emit(ResponseState.Success(characterItemMapper.map(response)))
+            emit(ResponseState.Success(response.toCharacter()))
         }.catch {
             emit(ResponseState.Error(it.message.orEmpty()))
         }
     }
 
     override fun getAllFavoriteCharacters(): Flow<List<Character>> {
-        return localDataSource.getAllFavoriteCharacters().map { it ->
-            it.map {
-                Character(
-                    id = it.id.toString(),
-                    characterName = it.name,
-                    characterStatus = it.status,
-                    characterOrigin = it.origin,
-                    characterCrew = it.crew,
-                    characterOccupation = it.occupation,
-                    characterBounty = it.bounty,
-                    characterDevilFruit = it.devilFruit,
-                    characterAbilities = it.abilities,
-                    characterPictureURL = it.imageURL
-                )
-            }
-        }
+        return localDataSource.getAllFavoriteCharacters()
+            .map { list -> list.map { item -> item.toCharacter() } }
     }
 
     override suspend fun addFavoriteCharacter(favoriteCharacterEntity: Character) {
-        TODO("Not yet implemented")
+        localDataSource.addFavoriteCharacter(favoriteCharacterEntity.toFavoriteCharacter())
     }
 
     override suspend fun deleteFavoriteCharacter(favoriteCharacterEntity: Character) {
-        TODO("Not yet implemented")
+        localDataSource.deleteFavoriteCharacter(favoriteCharacterEntity.toFavoriteCharacter())
     }
 
     override suspend fun getAllCrews(): Flow<ResponseState<List<Crew>>> {
         return flow {
             emit(ResponseState.Loading)
             val response = restDataSource.getAllCrews()
-            emit(ResponseState.Success(crewListMapper.map(response)))
+            emit(ResponseState.Success(response.toCrewList()))
         }.catch {
             emit(ResponseState.Error(it.message.orEmpty()))
         }
@@ -96,22 +86,23 @@ class OnePieceRepositoryImpl @Inject constructor(
         return flow {
             emit(ResponseState.Loading)
             val response = restDataSource.getSingleCrew(id)
-            emit(ResponseState.Success(crewItemMapper.map(response)))
+            emit(ResponseState.Success(response.toCrew()))
         }.catch {
             emit(ResponseState.Error(it.message.orEmpty()))
         }
     }
 
     override fun getAllFavoriteCrews(): Flow<List<Crew>> {
-        TODO("Not yet implemented")
+        return localDataSource.getAllFavoriteCrews()
+            .map { list -> list.map { item -> item.toCrew() } }
     }
 
     override suspend fun addFavoriteCrew(favoriteCrewEntity: Crew) {
-        TODO("Not yet implemented")
+        localDataSource.addFavoriteCrew(favoriteCrewEntity.toFavoriteCrew())
     }
 
     override suspend fun deleteFavoriteCrew(favoriteCrewEntity: Crew) {
-        TODO("Not yet implemented")
+        localDataSource.deleteFavoriteCrew(favoriteCrewEntity.toFavoriteCrew())
     }
 
 
@@ -119,88 +110,91 @@ class OnePieceRepositoryImpl @Inject constructor(
         return flow {
             emit(ResponseState.Loading)
             val response = restDataSource.getALlDevilFruits()
-            emit(ResponseState.Success(devilFruitListMapper.map(response)))
+            emit(ResponseState.Success(response.toDevilFruitList()))
         }.catch {
             emit(ResponseState.Error(it.message.orEmpty()))
         }
     }
 
+    override suspend fun isFavoriteDevilFruit(devilFruitID: String): Boolean {
+        return localDataSource.isFavoriteDevilFruit(devilFruitID)
+    }
+
     override fun getAllFavoriteDevilFruits(): Flow<List<DevilFruit>> {
-        TODO("Not yet implemented")
+        return localDataSource.getAllFavoriteDevilFruits()
+            .map { list -> list.map { item -> item.toDevilFruit() } }
     }
 
     override suspend fun addFavoriteDevilFruit(devilFruitEntity: DevilFruit) {
-        TODO("Not yet implemented")
+        localDataSource.addFavoriteDevilFruit(devilFruitEntity.toFavoriteDevilFruit())
     }
 
     override suspend fun deleteFavoriteDevilFruit(devilFruitEntity: DevilFruit) {
-        TODO("Not yet implemented")
+        localDataSource.deleteFavoriteDevilFruit(devilFruitEntity.toFavoriteDevilFruit())
     }
 
     override suspend fun getAllOccupations(): Flow<ResponseState<List<Occupations>>> {
         return flow {
             emit(ResponseState.Loading)
             val response = restDataSource.getALlOccupations()
-            emit(ResponseState.Success(occupationListMapper.map(response)))
+            emit(ResponseState.Success(response.toOccupationList()))
         }.catch {
             emit(ResponseState.Error(it.message.orEmpty()))
         }
     }
 
     override fun getAllFavoriteOccupations(): Flow<List<Occupations>> {
-        TODO("Not yet implemented")
+        return localDataSource.getAllFavoriteOccupations()
+            .map { list -> list.map { item -> item.toOccupation() } }
+    }
+
+    override suspend fun isFavoriteOccupation(occupationID: String): Boolean {
+        return localDataSource.isFavoriteOccupation(occupationID)
     }
 
     override suspend fun addFavoriteOccupation(favoriteOccupationEntity: Occupations) {
-        TODO("Not yet implemented")
+        localDataSource.addFavoriteOccupation(favoriteOccupationEntity.toFavoriteOccupation())
     }
 
     override suspend fun deleteFavoriteOccupation(favoriteOccupationEntity: Occupations) {
-        TODO("Not yet implemented")
+        localDataSource.deleteFavoriteOccupation(favoriteOccupationEntity.toFavoriteOccupation())
     }
 
     override suspend fun getAllLocations(): Flow<ResponseState<List<Location>>> {
         return flow {
             emit(ResponseState.Loading)
             val response = restDataSource.getAllLocations()
-            emit(ResponseState.Success(locationListMapper.map(response)))
+            emit(ResponseState.Success(response.toLocationList()))
         }.catch {
             emit(ResponseState.Error(it.message.orEmpty()))
         }
-    }
-
-    override fun getAllFavoriteLocations(): Flow<List<Location>> {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun addFavoriteLocation(favoriteLocationEntity: Location) {
-        TODO("Not yet implemented")
-    }
-
-    override suspend fun deleteFavoriteLocation(favoriteLocationEntity: Location) {
-        TODO("Not yet implemented")
     }
 
     override suspend fun getAllSubLocationsByLocation(locationID: String): Flow<ResponseState<List<SubLocation>>> {
         return flow {
             emit(ResponseState.Loading)
             val response = restDataSource.getAllSubLocationsByLocation(locationID)
-            emit(ResponseState.Success(subLocationListMapper.map(response)))
+            emit(ResponseState.Success(response.toSubLocationList()))
         }.catch {
             emit(ResponseState.Error(it.message.orEmpty()))
         }
     }
 
+    override suspend fun isFavoriteSubLocation(subLocationID: String): Boolean {
+        return localDataSource.isFavoriteSubLocation(subLocationID)
+    }
+
     override fun getAllFavoriteSubLocations(): Flow<List<SubLocation>> {
-        TODO("Not yet implemented")
+        return localDataSource.getAllFavoriteSubLocations()
+            .map { list -> list.map { item -> item.toSubLocation() } }
     }
 
     override suspend fun addFavoriteSubLocation(favoriteSubLocationEntity: SubLocation) {
-        TODO("Not yet implemented")
+        localDataSource.addFavoriteSubLocation(favoriteSubLocationEntity.toFavoriteSubLocation())
     }
 
     override suspend fun deleteFavoriteSubLocation(favoriteSubLocationEntity: SubLocation) {
-        TODO("Not yet implemented")
+        localDataSource.deleteFavoriteSubLocation(favoriteSubLocationEntity.toFavoriteSubLocation())
     }
 
 

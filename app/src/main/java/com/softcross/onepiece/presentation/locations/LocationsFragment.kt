@@ -39,6 +39,9 @@ class LocationsFragment : Fragment(R.layout.fragment_locations) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeUI()
+        binding.fabToFav.setOnClickListener{
+            findNavController().navigate(R.id.locations_to_favorites)
+        }
     }
 
     private fun observeUI() {

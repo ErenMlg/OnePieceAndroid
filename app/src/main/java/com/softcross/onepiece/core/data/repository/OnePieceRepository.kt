@@ -34,18 +34,17 @@ interface OnePieceRepository {
 
     //Devil Fruit
     suspend fun getAllDevilFruits(): Flow<ResponseState<List<DevilFruit>>>
+    suspend fun isFavoriteDevilFruit(devilFruitID: String): Boolean
     fun getAllFavoriteDevilFruits(): Flow<List<DevilFruit>>
     suspend fun addFavoriteDevilFruit(devilFruitEntity: DevilFruit)
     suspend fun deleteFavoriteDevilFruit(devilFruitEntity: DevilFruit)
 
     //Location
     suspend fun getAllLocations(): Flow<ResponseState<List<Location>>>
-    fun getAllFavoriteLocations(): Flow<List<Location>>
-    suspend fun addFavoriteLocation(favoriteLocationEntity: Location)
-    suspend fun deleteFavoriteLocation(favoriteLocationEntity: Location)
 
     //SubLocation
     suspend fun getAllSubLocationsByLocation(locationID: String): Flow<ResponseState<List<SubLocation>>>
+    suspend fun isFavoriteSubLocation(subLocationID: String): Boolean
     fun getAllFavoriteSubLocations(): Flow<List<SubLocation>>
     suspend fun addFavoriteSubLocation(favoriteSubLocationEntity: SubLocation)
     suspend fun deleteFavoriteSubLocation(favoriteSubLocationEntity: SubLocation)
@@ -53,6 +52,7 @@ interface OnePieceRepository {
     //Occupation
     suspend fun getAllOccupations(): Flow<ResponseState<List<Occupations>>>
     fun getAllFavoriteOccupations(): Flow<List<Occupations>>
+    suspend fun isFavoriteOccupation(occupationID: String): Boolean
     suspend fun addFavoriteOccupation(favoriteOccupationEntity: Occupations)
     suspend fun deleteFavoriteOccupation(favoriteOccupationEntity: Occupations)
 

@@ -2,9 +2,11 @@ package com.softcross.onepiece.presentation.devilFruits
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import com.softcross.onepiece.R
 import com.softcross.onepiece.core.common.delegate.viewBinding
 import com.softcross.onepiece.core.common.extension.gone
@@ -18,16 +20,23 @@ class DevilFruitsFragment : Fragment(R.layout.fragment_devil_fruits) {
 
     private val viewModel: DevilFruitsViewModel by viewModels()
     private val binding: FragmentDevilFruitsBinding by viewBinding(FragmentDevilFruitsBinding::bind)
-    private val adapter = DevilFruitsAdapter()
+    private val adapter = DevilFruitsAdapter().apply {
+        setOnFavoriteClickListener {
+            viewModel.changeDevilFruitFavoriteState(it)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getAllDevilFruits()
+        Log.e("Çalıştı","onCreate")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeUi()
+        binding.fabToFav.setOnClickListener{
+            findNavController().navigate(R.id.devilFruit_to_favorites)
+        }
     }
 
     private fun observeUi() {
@@ -48,7 +57,7 @@ class DevilFruitsFragment : Fragment(R.layout.fragment_devil_fruits) {
         }
     }
 
-    private fun handleSuccess(devilFruits: List<DevilFruit>) {
+    private fun handleSuccess(devilFruits: List<DevilFruitUiItem>) {
         adapter.updateItems(devilFruits)
         binding.rvDevilFruits.adapter = adapter
         contentVisible(true)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,10 +8,13 @@
     android:background="@color/subColor"
     tools:context=".presentation.MainActivity">
 
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="@drawable/bg_bottom_bar"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
@@ -34,4 +37,4 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
 
-</FrameLayout>
+</RelativeLayout>

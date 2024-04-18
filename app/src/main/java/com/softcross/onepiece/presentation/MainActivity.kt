@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuItemCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUiSaveStateControl
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
-
         NavigationUI.setupWithNavController(bottomNav, navHostFragment.navController, false)
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
@@ -58,7 +58,9 @@ class MainActivity : AppCompatActivity() {
                     bottomNav.visible()
                 }
 
-                else -> bottomNav.gone()
+                else -> {
+                    bottomNav.gone()
+                }
             }
         }
 
