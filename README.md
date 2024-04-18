@@ -312,7 +312,6 @@
 This app uses <a href="https://developer.android.com/topic/architecture?hl=tr#recommended-app-arch">MVVM (Model View View-Model)</a> architecture
 Core layer have 5 sub layer as common, data, domain, local, network;
 <table>
-  <caption>Common</caption>
   <tr>
     <td>
       <img src="https://github.com/ErenMlg/OnePieceAndroid/assets/94524411/a8eb94f2-d77c-40bf-8d29-fdb144a0f23b">
