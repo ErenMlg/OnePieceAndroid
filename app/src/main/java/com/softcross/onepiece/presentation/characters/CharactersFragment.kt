@@ -27,6 +27,10 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
                 (getItemAtPosition(it) as CharacterListItem.CharacterItem).characterListUiItem.id
             findNavController().navigate(CharactersFragmentDirections.characterToDetail(id))
         }
+
+        setOnVideoItemClickListener {
+            findNavController().navigate(CharactersFragmentDirections.charactersToVideo(VIDEO_URL))
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +41,7 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeUI()
-        binding.fabToFav.setOnClickListener{
+        binding.fabToFav.setOnClickListener {
             findNavController().navigate(R.id.characters_to_favorite)
         }
     }
@@ -88,5 +92,10 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
             rvCharacters.isVisible = isVisible
             viewErrorLayoutCharacters.gone()
         }
+    }
+
+    companion object {
+        const val VIDEO_URL =
+            "https://video.fist7-1.fna.fbcdn.net/v/t42.1790-2/435543024_763035555929802_1700128639776742492_n.mp4?_nc_cat=111&ccb=1-7&_nc_sid=55d0d3&efg=eyJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCIsInZpZGVvX2lkIjoxMDk3MzY5OTA4MjYxNDY0fQ%3D%3D&_nc_ohc=xIf4wAmGunwAb6cKvu9&_nc_rml=0&_nc_ht=video.fist7-1.fna&oh=00_AfBHBx0aDaWtE7pSX8TJ4ipwhxnrglcLy8Mc38ulGDG7RA&oe=6626F69E"
     }
 }

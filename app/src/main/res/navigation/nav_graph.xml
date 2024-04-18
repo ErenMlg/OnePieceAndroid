@@ -16,6 +16,9 @@
         <action
             android:id="@+id/characters_to_favorite"
             app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/characters_to_video"
+            app:destination="@id/videoFragment" />
     </fragment>
     <fragment
         android:id="@+id/characterDetailFragment"
@@ -109,6 +112,18 @@
         tools:layout="@layout/fragment_favorites" >
         <action
             android:id="@+id/favorites_to_characters"
+            app:destination="@id/charactersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.softcross.onepiece.presentation.characters.videoDetail.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video" >
+        <argument
+            android:name="videoURL"
+            app:argType="string" />
+        <action
+            android:id="@+id/video_to_characters"
             app:destination="@id/charactersFragment" />
     </fragment>
 </navigation>

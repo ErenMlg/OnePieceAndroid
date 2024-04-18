@@ -77,6 +77,10 @@ dependencies {
     implementation(libs.picasso)
     //Lottie
     implementation(libs.lottie)
+    //Exo
+    implementation(libs.media3.ui)
+    implementation(libs.media3.exoplayer.dash)
+    implementation(libs.media3.exoplayer)
     //Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

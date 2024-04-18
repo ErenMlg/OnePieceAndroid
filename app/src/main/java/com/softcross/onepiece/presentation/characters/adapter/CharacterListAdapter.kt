@@ -46,7 +46,8 @@ class CharacterListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return when (viewType) {
             VIDEO_ITEM_VIEW_TYPE -> {
                 VideoViewHolder(
-                    parent.inflateAdapterItem(ItemVideoAdapterBinding::inflate)
+                    parent.inflateAdapterItem(ItemVideoAdapterBinding::inflate),
+                    onVideoItemClickListener
                 )
             }
 
