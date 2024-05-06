@@ -2,6 +2,12 @@
 <br>
 <p align="center">This is a one piece anime app with custom local api(<a href="https://github.com/ErenMlg/OnePieceAPI">API Repository</a>), maded for the improve myself. This app have Picasso, Room, Lottie Animations, Retrofit, OkHttp3, Media3 Exoplayer, Hilt, Ksp, Navigation Libraries and some custom view components.</p>
  <br>
+
+<p align="center">
+<a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-red.svg"></a>
+<a href="https://android-arsenal.com/api?level=23"><img src="https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat"></a>
+<a href="https://github.com/ErenMlg"><img src="https://img.shields.io/badge/github-ErenMlg-blue"></a>
+</p>
  
  ## Project Screens
 <table align="center">
