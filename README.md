@@ -2,6 +2,12 @@
 <br>
 <p align="center">This is a one piece anime app with custom local api(<a href="https://github.com/ErenMlg/OnePieceAPI">API Repository</a>), maded for the improve myself. This app have Picasso, Room, Lottie Animations, Retrofit, OkHttp3, Media3 Exoplayer, Hilt, Ksp, Navigation Libraries and some custom view components.</p>
  <br>
+
+<p align="center">
+<a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-red.svg"></a>
+<a href="https://android-arsenal.com/api?level=23"><img src="https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat"></a>
+<a href="https://github.com/ErenMlg"><img src="https://img.shields.io/badge/github-ErenMlg-blue"></a>
+</p>
  
  ## Project Screens
 <table align="center">
@@ -107,6 +113,10 @@
   <li><a href="https://developer.android.com/topic/architecture/data-layer">Repository</a>: This located in data layer that contains application data and business logic. </li>
   <li><a href="https://developer.android.com/topic/architecture/domain-layer?hl=tr">Use Case</a>: Located domain layer that sits between the UI layer and the data layer.</li>
 </ul>
+
+## Architecture
+This app uses <a href="https://developer.android.com/topic/architecture?hl=tr#recommended-app-arch"> MVVM (Model View View-Model)</a> architecture structure.
+<img src="https://camo.githubusercontent.com/fbd92f5206e4fdf48b0827b9aa91211446eed9d9d0e2d2464156fe064b8b4e8c/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f637233516b2e706e67">
 
 ## Api Structure
 <table>
@@ -312,7 +322,6 @@
 This app uses <a href="https://developer.android.com/topic/architecture?hl=tr#recommended-app-arch">MVVM (Model View View-Model)</a> architecture
 Core layer have 5 sub layer as common, data, domain, local, network;
 <table>
-  <caption>Common</caption>
   <tr>
     <td>
       <img src="https://github.com/ErenMlg/OnePieceAndroid/assets/94524411/a8eb94f2-d77c-40bf-8d29-fdb144a0f23b">
@@ -371,6 +380,23 @@ They hold own fragments, viewmodels, adapters and detail pages.
  </td>
  </tr>
 </table>
+
+## License
+<pre>
+Designed and developed by 2024 ErenMlg (Eren Mollaoğlu)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</pre>
 
 ## End Note
 I may have mistakes, you can contact me for your feedback. 👉 📫 **eren.mollaoglu@outlook.com**<br>
